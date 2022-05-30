@@ -1,0 +1,15 @@
+.contact-title{
+    font-size: 25px;
+    text-decoration: underline;
+    color: #DA501A;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.contact-text{
+    font-size: 17px;
+    line-height: 20px;
+    color: #4F4F4F;
+}
+.content{
+    margin-bottom: 500px;
+}

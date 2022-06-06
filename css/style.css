@@ -408,7 +408,11 @@ input{
   height: 240px;
   position: relative;
   margin-bottom: 10px;
+  transition: 0.5s;
 }
+/* .card:hover{
+  background-color: #d6cdcd;
+} */
 .sale_btn{
   font-size: 24px;
   color: #F3F2F0;
@@ -416,7 +420,7 @@ input{
   padding: 5px;
   border-radius: 5px;
   position: absolute;
-  top: 5em;
+  top: 6em;
   right: 1em;
   transition: 0.5s;
 }

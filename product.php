@@ -15,7 +15,7 @@
             <div class="container">
                 <nav class="nav">
                     <ul class="menu">
-                        <li class="menu_liner"><a class="menu_link" href="/index.html">Главная</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/index.php">Главная</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">О компани</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Каталог</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>

@@ -16,8 +16,8 @@
             <div class="container">
                 <nav class="nav">
                     <ul class="menu">
-                        <li class="menu_liner"><a class="menu_link" href="/about-company.html">О компани</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Каталог</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/about-company.php">О компани</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="catalog.php">Каталог</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Контакты</a></li>
                     </ul>
@@ -45,7 +45,7 @@
                             <a class="header-shop" href="#">В вашей корзине пусто</a>
                         </div>
                         <div class="header-contact-ak">
-                            <a class="header-ak" href="signup.html">Войти в личный кабинет</a>
+                            <a class="header-ak" href="signup.php">Войти в личный кабинет</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                 <div class="catalog">
                     <button class="dropdown-btn">Автомодели</button>
                     <div class="dropdown-container">
-                        <a href="product.html">Ссылка 1</a>
+                        <a href="product.php">Ссылка 1</a>
                         <a href="#">Ссылка 2</a>
                         <a href="#">Ссылка 3</a>
                     </div>

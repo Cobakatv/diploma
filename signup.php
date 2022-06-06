@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/signup.css">
     <title>Регистрация/Вход</title>
 </head>
+
 <body>
     <article class="container">
         <div class="blok">
@@ -25,7 +27,7 @@
             <form action="#" class="form form_sagnin">
                 <h3 class="form-title">Вход</h3>
                 <p>
-                    <input type="text" class="form_input" placeholder="Логин" required>
+                    <input type="email" class="form_input" placeholder="email" required>
                 </p>
                 <p>
                     <input type="password" class="form_input" placeholder="Пароль" required>
@@ -41,7 +43,10 @@
             <form action="#" class="form form_sagnun">
                 <h3 class="form-title">Зарегистрироваться</h3>
                 <p>
-                    <input type="text" class="form_input" placeholder="Логин" required >
+                    <input type="text" class="form_input" placeholder="Имя" required>
+                </p>
+                <p>
+                    <input type="text" class="form_input" placeholder="Фамилия" required>
                 </p>
                 <p>
                     <input type="mail" class="form_input" placeholder="email" required>
@@ -62,4 +67,5 @@
 
     <script src="js/signup.js"></script>
 </body>
+
 </html>

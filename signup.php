@@ -8,7 +8,6 @@ if(isset($data['signup'])){
 	$errors = array();
 	$showError = True;
 	
-	}
 	if(trim($data['pass_2']) != trim($data[pass_2])){
 		$errors[] = 'Пароли не совпадают';
 	}
@@ -103,7 +102,7 @@ if(isset($data['signup'])){
     </article>
 
 
-    <!--script src="js/signup.js"></script-->
+    <script src="js/signup.js"></script>
 </body>
 
 </html>

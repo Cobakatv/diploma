@@ -8,17 +8,6 @@ if(isset($data['signup'])){
 	$errors = array();
 	$showError = True;
 	
-	if(trim($data['firstName']) == ""){
-		$errors[] = 'Введите имя';
-	}
-	if(trim($data['lastName']) == ""){
-		$errors[] = 'Введите фамилию';
-	}
-	if(trim($data['email']) == ""){
-		$errors[] = 'Введите почту';
-	}
-	if(trim($data['pass']) == ""){
-		$errors[] = 'Введите пароль';
 	}
 	if(trim($data['pass_2']) != trim($data[pass_2])){
 		$errors[] = 'Пароли не совпадают';
@@ -36,6 +25,7 @@ if(isset($data['signup'])){
 	}	
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

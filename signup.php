@@ -103,7 +103,7 @@ if(isset($data['signup'])){
     </article>
 
 
-    <script src="js/signup.js"></script>
+    <!--script src="js/signup.js"></script-->
 </body>
 
 </html>

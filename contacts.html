@@ -5,18 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="img/favicons/site.webmanifest">
-    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#7f452f">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/product.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/contacts.css">
     <title>Elwau</title>
 </head>
 
@@ -26,11 +17,10 @@
             <div class="container">
                 <nav class="nav">
                     <ul class="menu">
-                        <li class="menu_liner"><a class="menu_link" href="/index.php">Главная</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">О компани</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/about-company.html">О компани</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Каталог</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Контакты</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/index.php">Главная</a></li>
                     </ul>
                     <div class="input">
                         <input class="input_text" type="text" placeholder="поиск по каталогу">
@@ -56,7 +46,7 @@
                             <a class="header-shop" href="#">В вашей корзине пусто</a>
                         </div>
                         <div class="header-contact-ak">
-                            <a class="header-ak" href="#">Войти в личный кабинет</a>
+                            <a class="header-ak" href="signup.html">Войти в личный кабинет</a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +59,7 @@
                 <div class="catalog">
                     <button class="dropdown-btn">Автомодели</button>
                     <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
+                        <a href="product.html">Ссылка 1</a>
                         <a href="#">Ссылка 2</a>
                         <a href="#">Ссылка 3</a>
                     </div>
@@ -103,8 +93,6 @@
                         <a href="#">Ссылка 2</a>
                         <a href="#">Ссылка 3</a>
                     </div>
-
-
                 </div>
                 <div class="news">
                     <div class="sidebar-news">
@@ -129,85 +117,25 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="sidebar_mail">
                     <a href="#" class="mail-siderbar sidebar_mail-email">Написать нам</a>
                 </div>
             </div>
             <div class="content">
-                <div class="content-product">
-                    <div class="img-product">
-                        <img src="/img/Catalog/kyosho-lazer-zx5.png" alt="kyosho-lazer-zx5">
+                <div class="contact">
+                    <div class="">
+                        <h3 class="contact-title">Как нас найти?</h3>
+                        <p class="contact-text">Адрес нашей компании: <strong>ул. Академика Проскуры, 10</strong></p>
+                        <p class="contact-text">Телефоны нашей компании:
+                             <span class="contacts-color"><a class="contact-tell" href="tel:380981927420">+(380) 98-192-74-20</a>,<a class="contact-tell" href="tel:380971256912">+(380) 97-125-69-12</a></span></p>
                     </div>
-                    <div class="short-description">
-                        <h3 class="product-title">Kyosho Lazer ZX-5 (синий)</h3>
-                        <table class="shor-des">
-                            <tr>
-                                <td>Производитель:</td>
-                                <td class="indent">Kyosho</td>
-                            </tr>
-                            <tr>
-                                <td>Модель:</td>
-                                <td class="indent">30861T4B</td>
-                            </tr>
-                            <tr>
-                                <td>Наличие:</td>
-                                <td class="indent">В наличии</td>
-                            </tr>
-                        </table>
-                        <button class="btn btn-product">Купить</button>
-                        <div class="social">
-                            <h3 class="social-text">Поделиться с друзьями</h3>
-                            <a href="https://www.facebook.com" target="_blank"><img class="social-icon social-fb" src="/img/social/facebook.png" alt="facebook"></a>
-                            <a href="https://twitter.com" target="_blank"><img class="social-icon social-tw" src="/img/social/twitter.png" alt="twitter"></a>
-                            <a href="https://www.instagram.com" target="_blank"><img class="social-icon social-in" src="/img/social/instagram.png" alt="instagram"></a>
-                        </div>
+                    <div class="return">
+                        <h3 class="contact-title">Пункты самовывоза и возврата?</h3>
+                        <p class="contact-text">Вернуть товар можно в сервисных отделах или в пунктах приема возвратов.</p>
+                        <p class="contact-text">Пункты приема возвратов не имеют сервисных специалистов. Окончательное решение по возврату товара будет принято после осмотра товара специалистом сервиса.</p>
+                        <iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2349.577881162745!2d36.28525386296048!3d50.04447023359722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a6e2ef582b59%3A0x1f4a90274bfcd858!2z0YPQuy4g0JDQutCw0LTQtdC80LjQutCwINCf0YDQvtGB0LrRg9GA0YssIDEwLCDQpdCw0YDRjNC60L7Qsiwg0KXQsNGA0YzQutC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNjEwMDA!5e0!3m2!1sru!2sua!4v1654525451196!5m2!1sru!2sua" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                </div>
-                <div class="product-description">
-                    <h3 class="description-title">Описание</h3>
-                    <p class="description-text">
-                        Полностью собранное шасси, установленный двигатель Kyosho G20 Stock,
-                        электронный регулятор скорости PERFEX KA-15, микроприёмник PERFEX KR-6,
-                        сервомашинку PERFEX KS-101BK, покрашенный корпус с наклейками,
-                        двухканальный передатчик Perfex/Futaba KT-6, инструкцию, трубочку для антенны приёмника,
-                        крестовой/колёсный ключ.
-                    </p>
-
-                    <table class="shor-desc">
-                        <tr class="slider_color">
-                            <td>Длина:</td>
-                            <td class="indent">380 мм</td>
-                        </tr>
-                        <tr>
-                            <td>Ширина:</td>
-                            <td class="indent">248 мм</td>
-                        </tr>
-                        <tr class="slider_color">
-                            <td>Высота:</td>
-                            <td class="indent">145 мм</td>
-                        </tr>
-                        <tr>
-                            <td>Клиренс:</td>
-                            <td class="indent">24 мм</td>
-                        </tr>
-                        <tr class="slider_color">
-                            <td>Длина колесной базы:</td>
-                            <td class="indent">270 мм</td>
-                        </tr>
-                        <tr>
-                            <td>Колея (передняя/задняя):</td>
-                            <td class="indent">176/176 мм</td>
-                        </tr>
-                        <tr class="slider_color">
-                            <td>Ширина колёс (перед/зад)</td>
-                            <td class="indent">34/42 мм</td>
-                        </tr>
-                        <tr>
-                            <td>Вес (приблизительно)</td>
-                            <td class="indent">1650 г</td>
-                        </tr>
-                    </table>
+                    
                 </div>
             </div>
         </div>
@@ -218,9 +146,9 @@
                 <div class="footer_top">
                     <nav class="nav footer_nav">
                         <ul class="footer_menu">
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">О компани</a></li>
+                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="/about-company.html">О компани</a></li>
                             <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Каталог</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Доставка</a></li>
+                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="/index.php">Главная</a></li>
                             <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Контакты</a></li>
                         </ul>
                     </nav>
@@ -241,7 +169,7 @@
             </div>
         </div>
     </footer>
+
     <script src="/js/main.js"></script>
 </body>
-
 </html>

@@ -16,10 +16,10 @@ if(isset($data['signup'])){
 	}
 	if(empty($errors)){
 		$user = R::dispense('users');
-		$user->firstName = data['firstName'];
-		$user->lastName = data['lastName'];
-		$user->email = data['email'];
-		$user->pass = password_hash(data['pass'], PASSWORD_DEFAULT);
+		$user->firstName = $data['firstName'];
+		$user->lastName = $data['lastName'];
+		$user->email = $data['email'];
+		$user->pass = password_hash($data['pass'], PASSWORD_DEFAULT);
 		R::store($user);
 	}	
 }
@@ -117,7 +117,7 @@ if(isset($data['signin'])){
     </article>
 
 
-    <!--script src="js/signup.js"></script-->
+    <script src="js/signup.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,46 @@
+<?php
+require 'db.php';
+$data = $_POST;
+$showError = False;
+
+
+if(isset($data['signup'])){
+	$errors = array();
+	$showError = True;
+	
+	if(trim($data['firstName']) == ""){
+		$errors[] = 'Введите имя';
+	}
+	if(trim($data['lastName']) == ""){
+		$errors[] = 'Введите фамилию';
+	}
+	if(trim($data['email']) == ""){
+		$errors[] = 'Введите почту';
+	}
+	if(trim($data['pass']) == ""){
+		$errors[] = 'Введите пароль';
+	}
+	if(trim($data['pass_2']) != trim($data[pass_2])){
+		$errors[] = 'Пароли не совпадают';
+	}
+	if(R::count('users', 'email = ?', array($data['email'])) > 0){
+		$errors[] = 'Пользователь с таким email существует';
+	}
+	if(empty($errors)){
+		$user = R::dispense('users');
+		$user->firstName = data['firstName'];
+		$user->lastName = data['lastName'];
+		$user->email = data['email'];
+		$user->pass = password_hash(data['pass'], PASSWORD_DEFAULT);
+		R::store($user);
+	}
+	
+	
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,27 +83,28 @@
                 </p>
             </form>
             <!-- форма регистрации -->
-            <form action="#" class="form form_sagnun">
+            <form action="/signup.php" class="form form_sagnun">
                 <h3 class="form-title">Зарегистрироваться</h3>
                 <p>
-                    <input type="text" class="form_input" placeholder="Имя" required>
+                    <input type="text" class="form_input" name="firstName" placeholder="Имя" required>
                 </p>
                 <p>
-                    <input type="text" class="form_input" placeholder="Фамилия" required>
+                    <input type="text" class="form_input" name="lastName" placeholder="Фамилия" required>
                 </p>
                 <p>
-                    <input type="mail" class="form_input" placeholder="email" required>
+                    <input type="mail" class="form_input" name="email" placeholder="email" required>
                 </p>
                 <p>
-                    <input type="password" class="form_input" placeholder="Пароль" required>
+                    <input type="password" class="form_input" name="pass" placeholder="Пароль" required>
                 </p>
                 <p>
-                    <input type="password" class="form_input" placeholder="Повторите пароль" required>
+                    <input type="password" class="form_input" name="pass_2" placeholder="Повторите пароль" required>
                 </p>
                 <p>
-                    <button class="form_btn form_btn-signup">Зарегистрироваться</button>
+                    <button type="submit" class="form_btn form_btn-signup" name="signup" >Зарегистрироваться</button>
                 </p>
             </form>
+			<p><?phpif($showError){echo showError($errors); }?></p>
         </div>
     </article>
 

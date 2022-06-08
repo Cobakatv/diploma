@@ -23,6 +23,21 @@ if(isset($data['signup'])){
 		R::store($user);
 	}	
 }
+if(isset($data['signin'])){
+    $errors = array();
+
+    $user = R::findOne('users', 'email = ?', array($data['email']));
+    if($user){
+        if(password_verify($data['password'], $user->password)){
+            $_SESSION['user'] = $user;
+        } else {
+            $errors[] = "Неверный пароль";
+        }
+    }else{
+        $errors[] = "Неверный email";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -60,16 +75,16 @@ if(isset($data['signup'])){
         </div>
         <div class="form-box">
             <!-- форма входа -->
-            <form action="#" class="form form_sagnin">
+            <form action="signup.php" class="form form_sagnin">
                 <h3 class="form-title">Вход</h3>
                 <p>
-                    <input type="email" class="form_input" placeholder="email" required>
+                    <input type="email" class="form_input" name="email_signin" placeholder="Email" required>
                 </p>
                 <p>
-                    <input type="password" class="form_input" placeholder="Пароль" required>
+                    <input type="password" class="form_input" name="pass_signin" placeholder="Пароль" required>
                 </p>
                 <p>
-                    <button class="form_btn">Войти</button>
+                    <button type="submit" name="signin" class="form_btn">Войти</button>
                 </p>
                 <p>
                     <a href="#" class="form_forgot">Восстановить пароль</a>

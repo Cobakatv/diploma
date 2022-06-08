@@ -76,7 +76,7 @@ if(isset($data['signup'])){
                 </p>
             </form>
             <!-- форма регистрации -->
-            <form action="/signup.php" class="form form_sagnun">
+            <form action="signup.php" class="form form_sagnun">
                 <h3 class="form-title">Зарегистрироваться</h3>
                 <p>
                     <input type="text" class="form_input" name="firstName" placeholder="Имя" required>

@@ -75,7 +75,7 @@ if(isset($data['signin'])){
         </div>
         <div class="form-box">
             <!-- форма входа -->
-            <form action="signup.php" class="form form_sagnin">
+            <form action="signup.php" method="post" class="form form_sagnin">
                 <h3 class="form-title">Вход</h3>
                 <p>
                     <input type="email" class="form_input" name="email_signin" placeholder="Email" required>
@@ -91,7 +91,7 @@ if(isset($data['signin'])){
                 </p>
             </form>
             <!-- форма регистрации -->
-            <form action="signup.php" class="form form_sagnun">
+            <form action="signup.php" method="post" class="form form_sagnun">
                 <h3 class="form-title">Зарегистрироваться</h3>
                 <p>
                     <input type="text" class="form_input" name="firstName" placeholder="Имя" required>

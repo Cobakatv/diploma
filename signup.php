@@ -117,7 +117,7 @@ if(isset($data['signin'])){
     </article>
 
 
-    <script src="js/signup.js"></script>
+    <!--script src="js/signup.js"></script-->
 </body>
 
 </html>

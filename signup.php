@@ -33,14 +33,9 @@ if(isset($data['signup'])){
 		$user->email = data['email'];
 		$user->pass = password_hash(data['pass'], PASSWORD_DEFAULT);
 		R::store($user);
-	}
-	
-	
+	}	
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,7 +108,7 @@ if(isset($data['signup'])){
                     <button type="submit" class="form_btn form_btn-signup" name="signup" >Зарегистрироваться</button>
                 </p>
             </form>
-			<p><?phpif($showError){echo showError($errors); }?></p>
+			<p><?php if($showError){echo showError($errors); }?></p>
         </div>
     </article>
 

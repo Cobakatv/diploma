@@ -8,7 +8,7 @@ if(isset($data['signup'])){
 	$errors = array();
 	$showError = True;
 	
-	if(trim($data['pass_2']) != trim($data[pass_2])){
+	if(trim($data['pass']) != trim($data['pass_2'])){
 		$errors[] = 'Пароли не совпадают';
 	}
 	if(R::count('users', 'email = ?', array($data['email'])) > 0){

@@ -100,7 +100,7 @@ if(isset($data['signin'])){
                     <input type="text" class="form_input" name="lastName" placeholder="Фамилия" required>
                 </p>
                 <p>
-                    <input type="mail" class="form_input" name="email" placeholder="email" required>
+                    <input type="mail" class="form_input" name="email" placeholder="Email" required>
                 </p>
                 <p>
                     <input type="password" class="form_input" name="pass" placeholder="Пароль" required>
@@ -112,7 +112,6 @@ if(isset($data['signin'])){
                     <button type="submit" class="form_btn form_btn-signup" name="signup" >Зарегистрироваться</button>
                 </p>
             </form>
-			<p><?php if($showError){echo showError($errors); }?></p>
         </div>
     </article>
 

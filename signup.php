@@ -78,29 +78,20 @@ if(isset($data['signin'])){
             <form action="/signup.php" method="post" class="form form_sagnin">
                 <h3 class="form-title">Вход</h3>
                 <p>
-<<<<<<< HEAD
                     <input type="mail" class="form_input" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" placeholder="email" required>
                     <label for="email">В формате: elwau@gmail.com</label>
-=======
-                    <input type="email" class="form_input" name="email_signin" placeholder="Email" required>
->>>>>>> 11abdf437ea3f7b85a92c785363d1689fa5af81b
                 </p>
                 <p>
                     <input type="password" class="form_input" name="pass_signin" placeholder="Пароль" required>
                 </p>
                 <p>
-<<<<<<< HEAD
-                    <button class="form_btn form_btn-voyti">Войти</button>
-=======
                     <button type="submit" name="signin" class="form_btn">Войти</button>
->>>>>>> 11abdf437ea3f7b85a92c785363d1689fa5af81b
                 </p>
                 <p>
                     <a href="#" class="form_forgot">Восстановить пароль</a>
                 </p>
             </form>
             <!-- форма регистрации -->
-<<<<<<< HEAD
             <form action="#" class="form form_sagnun" id="registration" name="registration">
                 <h3 class="form-title">Зарегистрироваться</h3>
                 <p>
@@ -121,24 +112,6 @@ if(isset($data['signin'])){
                 </p>
                 <p>
                     <input type="password" class="form_input repeatregisterUserPassword" id="repeatregisterUserPassword" name="repeatregisterUserPassword" data-reg="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Повторите пароль" required>
-=======
-            <form action="/signup.php" method="post" class="form form_sagnun">
-                <h3 class="form-title">Зарегистрироваться</h3>
-                <p>
-                    <input type="text" class="form_input" name="firstName" placeholder="Имя" required>
-                </p>
-                <p>
-                    <input type="text" class="form_input" name="lastName" placeholder="Фамилия" required>
-                </p>
-                <p>
-                    <input type="mail" class="form_input" name="email" placeholder="Email" required>
-                </p>
-                <p>
-                    <input type="password" class="form_input" name="pass" placeholder="Пароль" required>
-                </p>
-                <p>
-                    <input type="password" class="form_input" name="pass_2" placeholder="Повторите пароль" required>
->>>>>>> 11abdf437ea3f7b85a92c785363d1689fa5af81b
                 </p>
                 <p>
                     <button type="submit" class="form_btn form_btn-signup" name="signup" >Зарегистрироваться</button>

@@ -81,6 +81,10 @@ width: 50%;
     position: absolute;
     transition: 0.5s;
 }
+.form label {
+    font-size: 14px;
+    color: #afafb6;
+}
 .form_sagnin{
     left: 0;
     transition-delay: 0.25s;
@@ -110,7 +114,7 @@ width: 50%;
     padding: 10px;
     border: 1px solid #333;
     font-size: inherit;
-    margin-bottom: 20px;
+    
 }
 .form_btn{
     border: none;
@@ -121,8 +125,12 @@ width: 50%;
     padding: 10px 50px;
     margin-bottom: 10px;
 }
+.form_btn-voyti{
+    margin-top: 10px;
+}
 .form_btn-signup{
     background-color: #ED6D3B;
+    margin-top: 10px;
 }
 .form_forgot{
     color: #333;

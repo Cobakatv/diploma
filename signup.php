@@ -85,7 +85,7 @@ if (isset($data['signin'])) {
                     <input type="password" class="form_input" name="pass_signin" placeholder="Пароль" required>
                 </p>
                 <p>
-                    <button type="submit" name="signin" class="form_btn">Войти</button>
+                    <button type="submit" name="signin" class="form_btn form_btn-voyti">Войти</button>
                 </p>
                 <p>
                     <a href="#" class="form_forgot">Восстановить пароль</a>

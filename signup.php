@@ -88,6 +88,9 @@ if (isset($data['signin'])) {
                     <button type="submit" name="signin" class="form_btn form_btn-voyti">Войти</button>
                 </p>
                 <p>
+                    <?php if($showError) {echo showError($errors);} ?>
+                </p>
+                <p>
                     <a href="#" class="form_forgot">Восстановить пароль</a>
                 </p>
             </form>
@@ -115,6 +118,9 @@ if (isset($data['signin'])) {
                 </p>
                 <p>
                     <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
+                </p>
+                <p>
+                    <?php if($showError) {echo showError($errors);} ?>
                 </p>
             </form>
         </div>

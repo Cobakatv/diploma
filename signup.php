@@ -4,36 +4,36 @@ $data = $_POST;
 $showError = False;
 
 
-if(isset($data['signup'])){
-	$errors = array();
-	$showError = True;
-	
-	if(trim($data['pass']) != trim($data['pass_2'])){
-		$errors[] = 'Пароли не совпадают';
-	}
-	if(R::count('users', 'email = ?', array($data['email'])) > 0){
-		$errors[] = 'Пользователь с таким email существует';
-	}
-	if(empty($errors)){
-		$user = R::dispense('users');
-		$user->firstName = $data['firstName'];
-		$user->lastName = $data['lastName'];
-		$user->email = $data['email'];
-		$user->pass = password_hash($data['pass'], PASSWORD_DEFAULT);
-		R::store($user);
-	}	
+if (isset($data['signup'])) {
+    $errors = array();
+    $showError = True;
+
+    if (trim($data['pass']) != trim($data['pass_2'])) {
+        $errors[] = 'Пароли не совпадают';
+    }
+    if (R::count('users', 'email = ?', array($data['email'])) > 0) {
+        $errors[] = 'Пользователь с таким email существует';
+    }
+    if (empty($errors)) {
+        $user = R::dispense('users');
+        $user->firstName = $data['firstName'];
+        $user->lastName = $data['lastName'];
+        $user->email = $data['email'];
+        $user->pass = password_hash($data['pass'], PASSWORD_DEFAULT);
+        R::store($user);
+    }
 }
-if(isset($data['signin'])){
+if (isset($data['signin'])) {
     $errors = array();
 
     $user = R::findOne('users', 'email = ?', array($data['email']));
-    if($user){
-        if(password_verify($data['password'], $user->password)){
+    if ($user) {
+        if (password_verify($data['password'], $user->password)) {
             $_SESSION['user'] = $user;
         } else {
             $errors[] = "Неверный пароль";
         }
-    }else{
+    } else {
         $errors[] = "Неверный email";
     }
 }
@@ -114,7 +114,7 @@ if(isset($data['signin'])){
                     <input type="password" class="form_input repeatregisterUserPassword" id="repeatregisterUserPassword" name="repeatregisterUserPassword" data-reg="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Повторите пароль" required>
                 </p>
                 <p>
-                    <button type="submit" class="form_btn form_btn-signup" name="signup" >Зарегистрироваться</button>
+                    <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
                 </p>
             </form>
         </div>

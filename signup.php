@@ -36,35 +36,40 @@
             <form action="#" class="form form_sagnin">
                 <h3 class="form-title">Вход</h3>
                 <p>
-                    <input type="email" class="form_input" placeholder="email" required>
+                    <input type="mail" class="form_input" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" placeholder="email" required>
+                    <label for="email">В формате: elwau@gmail.com</label>
                 </p>
                 <p>
                     <input type="password" class="form_input" placeholder="Пароль" required>
                 </p>
                 <p>
-                    <button class="form_btn">Войти</button>
+                    <button class="form_btn form_btn-voyti">Войти</button>
                 </p>
                 <p>
                     <a href="#" class="form_forgot">Восстановить пароль</a>
                 </p>
             </form>
             <!-- форма регистрации -->
-            <form action="#" class="form form_sagnun">
+            <form action="#" class="form form_sagnun" id="registration" name="registration">
                 <h3 class="form-title">Зарегистрироваться</h3>
                 <p>
-                    <input type="text" class="form_input" placeholder="Имя" required>
+                    <input type="text" class="form_input" id="name" name="name" data-reg="^[А-ЯЁ][а-яё]*$" placeholder="Имя" required>
+                    <label for="name">Только русские буквы</label>
                 </p>
                 <p>
-                    <input type="text" class="form_input" placeholder="Фамилия" required>
+                    <input type="text" class="form_input" id="surname" name="name" data-reg="^[А-ЯЁ][а-яё]*$" placeholder="Фамилия" required>
+                    <label for="surname">Только русские буквы</label>
                 </p>
                 <p>
-                    <input type="mail" class="form_input" placeholder="email" required>
+                    <input type="mail" class="form_input" id="email" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" placeholder="email" required>
+                    <label for="email">В формате: elwau@gmail.com</label>
                 </p>
                 <p>
-                    <input type="password" class="form_input" placeholder="Пароль" required>
+                    <input type="password" class="form_input registerUserPassword" id="registerUserPassword" name="registerUserPassword" data-reg="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Пароль" required>
+                    <label for="registerUserPassword">дожно быть (строчные и прописные латинские буквы, цифры) не больше 8 символов</label>
                 </p>
                 <p>
-                    <input type="password" class="form_input" placeholder="Повторите пароль" required>
+                    <input type="password" class="form_input repeatregisterUserPassword" id="repeatregisterUserPassword" name="repeatregisterUserPassword" data-reg="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Повторите пароль" required>
                 </p>
                 <p>
                     <button class="form_btn form_btn-signup">Зарегистрироваться</button>

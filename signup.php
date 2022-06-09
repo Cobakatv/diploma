@@ -120,6 +120,7 @@ if (isset($data['signin'])) {
                 <p>
                     <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
                 </p>
+
             </form>
         </div>
     </article>

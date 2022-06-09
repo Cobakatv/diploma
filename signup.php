@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require 'db.php';
 $data = $_POST;
 $showError = False;
@@ -38,7 +38,7 @@ if (isset($data['signin'])) {
     }
 }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -105,6 +105,10 @@ if (isset($data['signin'])) {
                 <p>
                     <input type="mail" class="form_input" id="email" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" placeholder="email" required>
                     <label for="email">В формате: elwau@gmail.com</label>
+                </p>
+                <p>
+                    <input type="text" class="form_input" id="phone" name="phone" data-reg="^\+380\d{9}$" placeholder="Телефон" required>
+                    <label for="email">В формате: +380999999999</label>
                 </p>
                 <p>
                     <input type="password" class="form_input registerUserPassword" id="registerUserPassword" name="registerUserPassword" data-reg="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Пароль" required>

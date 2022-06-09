@@ -1,3 +1,45 @@
+<?php
+require 'db.php';
+$data = $_POST;
+$showError = False;
+
+
+if(isset($data['signup'])){
+	$errors = array();
+	$showError = True;
+	
+	if(trim($data['pass']) != trim($data['pass_2'])){
+		$errors[] = 'Пароли не совпадают';
+	}
+	if(R::count('users', 'email = ?', array($data['email'])) > 0){
+		$errors[] = 'Пользователь с таким email существует';
+	}
+	if(empty($errors)){
+		$user = R::dispense('users');
+		$user->firstName = $data['firstName'];
+		$user->lastName = $data['lastName'];
+		$user->email = $data['email'];
+		$user->pass = password_hash($data['pass'], PASSWORD_DEFAULT);
+		R::store($user);
+	}	
+}
+if(isset($data['signin'])){
+    $errors = array();
+
+    $user = R::findOne('users', 'email = ?', array($data['email']));
+    if($user){
+        if(password_verify($data['password'], $user->password)){
+            $_SESSION['user'] = $user;
+        } else {
+            $errors[] = "Неверный пароль";
+        }
+    }else{
+        $errors[] = "Неверный email";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,23 +75,32 @@
         </div>
         <div class="form-box">
             <!-- форма входа -->
-            <form action="#" class="form form_sagnin">
+            <form action="/signup.php" method="post" class="form form_sagnin">
                 <h3 class="form-title">Вход</h3>
                 <p>
+<<<<<<< HEAD
                     <input type="mail" class="form_input" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" placeholder="email" required>
                     <label for="email">В формате: elwau@gmail.com</label>
+=======
+                    <input type="email" class="form_input" name="email_signin" placeholder="Email" required>
+>>>>>>> 11abdf437ea3f7b85a92c785363d1689fa5af81b
                 </p>
                 <p>
-                    <input type="password" class="form_input" placeholder="Пароль" required>
+                    <input type="password" class="form_input" name="pass_signin" placeholder="Пароль" required>
                 </p>
                 <p>
+<<<<<<< HEAD
                     <button class="form_btn form_btn-voyti">Войти</button>
+=======
+                    <button type="submit" name="signin" class="form_btn">Войти</button>
+>>>>>>> 11abdf437ea3f7b85a92c785363d1689fa5af81b
                 </p>
                 <p>
                     <a href="#" class="form_forgot">Восстановить пароль</a>
                 </p>
             </form>
             <!-- форма регистрации -->
+<<<<<<< HEAD
             <form action="#" class="form form_sagnun" id="registration" name="registration">
                 <h3 class="form-title">Зарегистрироваться</h3>
                 <p>
@@ -70,9 +121,27 @@
                 </p>
                 <p>
                     <input type="password" class="form_input repeatregisterUserPassword" id="repeatregisterUserPassword" name="repeatregisterUserPassword" data-reg="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Повторите пароль" required>
+=======
+            <form action="/signup.php" method="post" class="form form_sagnun">
+                <h3 class="form-title">Зарегистрироваться</h3>
+                <p>
+                    <input type="text" class="form_input" name="firstName" placeholder="Имя" required>
                 </p>
                 <p>
-                    <button class="form_btn form_btn-signup">Зарегистрироваться</button>
+                    <input type="text" class="form_input" name="lastName" placeholder="Фамилия" required>
+                </p>
+                <p>
+                    <input type="mail" class="form_input" name="email" placeholder="Email" required>
+                </p>
+                <p>
+                    <input type="password" class="form_input" name="pass" placeholder="Пароль" required>
+                </p>
+                <p>
+                    <input type="password" class="form_input" name="pass_2" placeholder="Повторите пароль" required>
+>>>>>>> 11abdf437ea3f7b85a92c785363d1689fa5af81b
+                </p>
+                <p>
+                    <button type="submit" class="form_btn form_btn-signup" name="signup" >Зарегистрироваться</button>
                 </p>
             </form>
         </div>

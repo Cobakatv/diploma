@@ -133,7 +133,7 @@ if (isset($data['signin'])) {
                     <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
                 </p>
                 <p>
-                    <?php if($showErrorSignup) {echo showError($errorSignup);} ?>
+                    <?php if($showErrorSignup) {echo showError($errorSignup);} #lol?>
                 </p>
             </form>
         </div>

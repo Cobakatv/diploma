@@ -1,12 +1,12 @@
 <?php
 require 'db.php';
 $data = $_POST;
-$showError = False;
+$showErrorSignin = False;
+$showErrorSignup = False;
 
 
 if (isset($data['signup'])) {
     $errorSignup = array();
-    $showError = True;
 
     if (trim($data['registerUserPassword']) != trim($data['repeatregisterUserPassword'])) {
         $errorSignup[] = 'Пароли не совпадают';
@@ -25,11 +25,12 @@ if (isset($data['signup'])) {
         $user->phone = $data['phone'];
         $user->pass = password_hash($data['registerUserPassword'], PASSWORD_DEFAULT);
         R::store($user);
+    } else {
+        $showErrorSignup = True;
     }
 }
 if (isset($data['signin'])) {
     $errorSignin = array();
-    $showError = True;
 
     $user = R::findOne('users', 'email = ?', array($data['email']));
     if ($user) {
@@ -38,9 +39,11 @@ if (isset($data['signin'])) {
 
         } else {
             $errorSignin[] = "Неверный пароль";
+            $showErrorSignin = True;
         }
     } else {
         $errorSignin[] = "Неверный email";
+        $showErrorSignin = True;
     }
 }
 
@@ -94,7 +97,7 @@ if (isset($data['signin'])) {
                     <button type="submit" name="signin" class="form_btn form_btn-voyti">Войти</button>
                 </p>
                 <p>
-                    <?php if($showError) {echo showError($errorSignin);} ?>
+                    <?php if($showErrorSignin) {echo showError($errorSignin);} ?>
                 </p>
                 <p>
                     <a href="#" class="form_forgot">Восстановить пароль</a>
@@ -129,9 +132,9 @@ if (isset($data['signin'])) {
                 <p>
                     <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
                 </p>
-                <!---p>
-                    <!?php if($showError) {echo showError($errorSignup);} ?>
-                </p-->
+                <p>
+                    <?php if($showErrorSignup) {echo showError($errorSignup);} ?>
+                </p>
             </form>
         </div>
     </article>

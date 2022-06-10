@@ -148,7 +148,7 @@ foreach($db_products as $row) {
                             <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->ModelType;?>/<?php echo $products[$i]->ImageNames;?>" alt="icon-catalog">
                             <a class="sale_btn" href="#"><?php echo $products[$i]->Price;?></a>
                             <h3 class="card_text">
-                                <a class="cart_text-link" href="/product.php?id=<?php echo $products[$i]->Modelid;?>"><?php echo $products[$i]->Name;?></a>
+                                <a class="cart_text-link" href="/product.php?id=<?php echo $products[$i]->id;?>"><?php echo $products[$i]->Name;?></a>
                             </h3>
                         </div>
                     </div>

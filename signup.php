@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require 'db.php';
 $data = $_POST;
 $showError = False;
@@ -38,7 +38,7 @@ if (isset($data['signin'])) {
     }
 }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -118,7 +118,7 @@ if (isset($data['signin'])) {
                     <input type="password" class="form_input repeatregisterUserPassword" id="repeatregisterUserPassword" name="repeatregisterUserPassword" data-reg="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Повторите пароль" required>
                 </p>
                 <p>
-                    <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
+                    <button type="submit" class="form_btn form_btn-signup" id="button" name="button">Зарегистрироваться</button>
                 </p>
 
             </form>

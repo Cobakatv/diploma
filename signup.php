@@ -36,7 +36,7 @@ if (isset($data['signin'])) {
 
     $user = R::findOne('users', 'email = ?', array($data['email']));
     if ($user) {
-        if (password_verify($data['password'], $user->password)) {
+        if (password_verify($data['registerUserPassword'], $user->password)) {
             $_SESSION['user'] = $user;
             header("Location: /");
         } else {

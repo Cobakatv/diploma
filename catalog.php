@@ -42,6 +42,7 @@ foreach($db_products as $row) {
                         <li class="menu_liner"><a class="menu_link" href="#">Контакты</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#"><?php echo count($db_products); ?></a></li>
                         <li class="menu_liner"><a class="menu_link" href="#"><?php echo count($products); ?></a></li>
+                        <li class="menu_liner"><a class="menu_link" href="#"><?php echo $db_products[1]->id; ?></a></li>
                     </ul>
                     <div class="input">
                         <input class="input_text" type="text" placeholder="поиск по каталогу">

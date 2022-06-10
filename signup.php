@@ -26,7 +26,7 @@ if (isset($data['signup'])) {
         $user->pass = password_hash($data['registerUserPassword'], PASSWORD_DEFAULT);
         R::store($user);
         $_SESSION['user'] = $user;
-        header("Location: httpы://elwau.pp.ua/");
+        header("Location: https://elwau.pp.ua/");
     } else {
         $showErrorSignup = True;
     }

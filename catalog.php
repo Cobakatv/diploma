@@ -1,6 +1,10 @@
 <?php
 require "db.php";
-$products = R::findAll('AutoModel');
+$db_products = R::findAll('AutoModel');
+$products = array();
+foreach($db_products as $row) {
+    $products = $row;
+}
 ?>
 
 
@@ -138,7 +142,7 @@ $products = R::findAll('AutoModel');
             </div>
             <div class="content">
                 <div class="sale sale-container">
-                    <?php for ($i = 1; $i < count($products) + 1; $i++) : ?>
+                    <?php for ($i = 1; $i < count($products); $i++) : ?>
                     <div class="sale_card">
                         <div class="card">
                             <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->ModelType;?>/<?php echo $products[$i]->ImageNames;?>" alt="icon-catalog">

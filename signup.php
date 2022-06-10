@@ -19,6 +19,7 @@ if (isset($data['signup'])) {
         $user->firstName = $data['firstName'];
         $user->lastName = $data['lastName'];
         $user->email = $data['email'];
+        $user->phone = $data['phone'];
         $user->pass = password_hash($data['pass'], PASSWORD_DEFAULT);
         R::store($user);
     }
@@ -95,11 +96,11 @@ if (isset($data['signin'])) {
             <form action="#" class="form form_sagnun" id="registration" name="registration">
                 <h3 class="form-title">Зарегистрироваться</h3>
                 <p>
-                    <input type="text" class="form_input" id="name" name="name" data-reg="^[А-ЯЁ][а-яё]*$" placeholder="Имя" required>
+                    <input type="text" class="form_input" id="name" name="firstName" data-reg="^[А-ЯЁ][а-яё]*$" placeholder="Имя" required>
                     <label for="name">Только русские буквы</label>
                 </p>
                 <p>
-                    <input type="text" class="form_input" id="surname" name="name" data-reg="^[А-ЯЁ][а-яё]*$" placeholder="Фамилия" required>
+                    <input type="text" class="form_input" id="surname" name="lastName" data-reg="^[А-ЯЁ][а-яё]*$" placeholder="Фамилия" required>
                     <label for="surname">Только русские буквы</label>
                 </p>
                 <p>

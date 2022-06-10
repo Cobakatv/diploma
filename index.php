@@ -1,3 +1,12 @@
+<?php
+require db.php;
+$user = R::findOne('users', 'id = ?', array($_SESSION['user']->id)) {
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -26,9 +35,9 @@
                 <nav class="nav">
                     <ul class="menu">
                         <li class="menu_liner"><a class="menu_link" href="/about-company.php">О компани</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="catalog.php">Каталог</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/catalog.php">Каталог</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Контакты</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/contacts.php">Контакты</a></li>
                     </ul>
                     <div class="input">
                         <input class="input_text" type="text" placeholder="поиск по каталогу">
@@ -54,7 +63,11 @@
                             <a class="header-shop" href="#">В вашей корзине пусто</a>
                         </div>
                         <div class="header-contact-ak">
-                            <a class="header-ak" href="signup.php">Войти в личный кабинет</a>
+                            <?php if($user) : ?>
+                                <a class="header-ak" href="#">Здравствуйте, <?php echo $user->firstName;?></a>
+                            <?php else :?>
+                                <a class="header-ak" href="signup.php">Войти в личный кабинет</a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

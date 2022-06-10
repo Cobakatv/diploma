@@ -38,7 +38,7 @@ if (isset($data['signin'])) {
     if ($user) {
         if (password_verify($data['password'], $user->password)) {
             $_SESSION['user'] = $user;
-
+            header("Location: https://elwau.pp.ua/");
         } else {
             $errorSignin[] = "Неверный пароль";
             $showErrorSignin = True;

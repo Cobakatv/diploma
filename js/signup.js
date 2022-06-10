@@ -13,19 +13,15 @@ signUnBtn.addEventListener('click', function () {
     body.classList.add('active');
 });
 
-
-// // registration
-
-
 let registerUserPassword = document.querySelector(".registerUserPassword");
 let repeatregisterUserPassword = document.querySelector(".repeatregisterUserPassword");
 
-//     registerUserPassword.oninput = function() {
-//         this.value = this.value.substr(0, 8);
-// }
-//     repeatregisterUserPassword.oninput = function() {
-//     this.value = this.value.substr(0, 8);
-// }
+    registerUserPassword.oninput = function() {
+        this.value = this.value.substr(0, 8);
+}
+    repeatregisterUserPassword.oninput = function() {
+    this.value = this.value.substr(0, 8);
+}
 
 
 // registration
@@ -35,7 +31,7 @@ const validFormArr = [];
 const button = registration.elements["button"];
 
 formArr.forEach((el) => {
-    if (el.hasAttribute("data-reg")) {
+    if (el.hasAttribute("patterng")) {
         el.setAttribute("is-valid", "0");
         validFormArr.push(el);
     }
@@ -45,20 +41,22 @@ button.addEventListener("click", buttonHandler);
 
 
 function inputHandler({target}) {
-    if (target.hasAttribute("data-reg")) {
+    if (target.hasAttribute("pattern")) {
         inputCheck(target);
     }
 }
 function inputCheck(el) {
     const inputValue = el.value;
-    const inputReg = el.getAttribute("data-reg");
+    const inputReg = el.getAttribute("pattern");
     const reg = new RegExp(inputReg);
     if (reg.test(inputValue)) {
         el.style.border = "2px solid rgb(0, 196, 0)";
         el.setAttribute("is-valid", "1");
+
     } else {
         el.style.border = "2px solid rgb(255, 0, 0)";
         el.setAttribute("is-valid", "0");
+
     }
 }
 

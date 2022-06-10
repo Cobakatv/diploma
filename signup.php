@@ -26,7 +26,7 @@ if (isset($data['signup'])) {
         $user->pass = password_hash($data['registerUserPassword'], PASSWORD_DEFAULT);
         R::store($user);
         $_SESSION['user'] = $user;
-        header("Location: https://elwau.pp.ua/");
+        header("Location: /");
     } else {
         $showErrorSignup = True;
     }
@@ -38,7 +38,7 @@ if (isset($data['signin'])) {
     if ($user) {
         if (password_verify($data['password'], $user->password)) {
             $_SESSION['user'] = $user;
-            header("Location: https://elwau.pp.ua/");
+            header("Location: /");
         } else {
             $errorSignin[] = "Неверный пароль";
             $showErrorSignin = True;

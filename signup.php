@@ -93,7 +93,7 @@ if (isset($data['signin'])) {
                 </p>
             </form>
             <!-- форма регистрации -->
-            <form action="/signup.php" class="form form_sagnun" id="registration" name="registration">
+            <form action="/signup.php" method="post" class="form form_sagnun" id="registration" name="registration">
                 <h3 class="form-title">Зарегистрироваться</h3>
                 <p>
                     <input type="text" class="form_input" id="name" name="firstName" data-reg="^[А-ЯЁ][а-яё]*$" placeholder="Имя" required>

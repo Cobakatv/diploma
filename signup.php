@@ -124,7 +124,9 @@ if (isset($data['signin'])) {
                 <p>
                     <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
                 </p>
-
+                <p>
+                    <?php if($showError) {echo showError($errors);} ?>
+                </p>
             </form>
         </div>
     </article>

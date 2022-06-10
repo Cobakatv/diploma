@@ -8,11 +8,14 @@ if (isset($data['signup'])) {
     $errors = array();
     $showError = True;
 
-    if (trim($data['pass']) != trim($data['pass_2'])) {
+    if (trim($data['registerUserPassword']) != trim($data['repeatregisterUserPassword'])) {
         $errors[] = 'Пароли не совпадают';
     }
     if (R::count('users', 'email = ?', array($data['email'])) > 0) {
         $errors[] = 'Пользователь с таким email существует';
+    }
+    if (R::count('users', 'phone = ?', array($data['phone'])) > 0) {
+        $errors[] = 'Пользователь с таким номером телефона существует';
     }
     if (empty($errors)) {
         $user = R::dispense('users');

@@ -25,6 +25,8 @@ if (isset($data['signup'])) {
         $user->phone = $data['phone'];
         $user->pass = password_hash($data['registerUserPassword'], PASSWORD_DEFAULT);
         R::store($user);
+        $_SESSION['user'] = $user;
+        header("Location: httpы://elwau.pp.ua/");
     } else {
         $showErrorSignup = True;
     }
@@ -133,7 +135,7 @@ if (isset($data['signin'])) {
                     <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
                 </p>
                 <p>
-                    <?php if($showErrorSignup) {echo showError($errorSignup);} #lol?>
+                    <?php if($showErrorSignup) {echo showError($errorSignup);}?>
                 </p>
             </form>
         </div>

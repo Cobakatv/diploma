@@ -146,11 +146,13 @@ foreach($db_products as $row) {
                     <?php for ($i = 1; $i < count($products); $i++) : ?>
                     <div class="sale_card">
                         <div class="card">
+                            <?php if ($products[$i]-> id != NULL) : ?>
                             <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->ModelType;?>/<?php echo $products[$i]->ImageNames;?>" alt="icon-catalog">
                             <a class="sale_btn" href="#"><?php echo $products[$i]->Price;?></a>
                             <h3 class="card_text">
                                 <a class="cart_text-link" href="/product.php?id=<?php echo $products[$i]->id;?>"><?php echo $products[$i]->Name;?></a>
                             </h3>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <?php endfor;?>

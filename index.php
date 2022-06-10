@@ -1,8 +1,6 @@
 <?php
 require db.php;
-$user = R::findOne('users', 'id = ?', array($_SESSION['user']->id)) {
-
-}
+$user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
 
 ?>
 

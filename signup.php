@@ -17,7 +17,7 @@ if (isset($data['signup'])) {
     if (R::count('users', 'phone = ?', array($data['phone'])) > 0) {
         $errorSignup[] = 'Пользователь с таким номером телефона существует';
     }
-    if (empty($errors)) {
+    if (empty($errorSignup)) {
         $user = R::dispense('users');
         $user->firstName = $data['firstName'];
         $user->lastName = $data['lastName'];
@@ -35,6 +35,7 @@ if (isset($data['signin'])) {
     if ($user) {
         if (password_verify($data['password'], $user->password)) {
             $_SESSION['user'] = $user;
+
         } else {
             $errorSignin[] = "Неверный пароль";
         }
@@ -128,9 +129,9 @@ if (isset($data['signin'])) {
                 <p>
                     <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
                 </p>
-                <p>
-                    <?php if($showError) {echo showError($errorSignup);} ?>
-                </p>
+                <!---p>
+                    <!?php if($showError) {echo showError($errorSignup);} ?>
+                </p-->
             </form>
         </div>
     </article>

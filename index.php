@@ -63,7 +63,7 @@ $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
                         <div class="header-contact-ak">
                             <?php if($user) : ?>
                                 <a class="header-ak" href="#">Здравствуйте, <?php echo $user->firstName;?></a>
-                                <a class="header-ak" href="#">Выйти <?php unset($_SESSION['user']);?></a>
+                                <a class="header-ak" <?php unset($_SESSION['user']);?> >Выйти</a>
                             <?php else :?>
                                 <a class="header-ak" href="signup.php">Войти в личный кабинет</a>
                             <?php endif; ?>

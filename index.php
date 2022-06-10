@@ -1,5 +1,5 @@
 <?php
-require db.php;
+require 'db.php';
 $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
 
 ?>

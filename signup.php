@@ -5,17 +5,17 @@ $showError = False;
 
 
 if (isset($data['signup'])) {
-    $errors = array();
+    $errorSignup = array();
     $showError = True;
 
     if (trim($data['registerUserPassword']) != trim($data['repeatregisterUserPassword'])) {
-        $errors[] = 'Пароли не совпадают';
+        $errorSignup[] = 'Пароли не совпадают';
     }
     if (R::count('users', 'email = ?', array($data['email'])) > 0) {
-        $errors[] = 'Пользователь с таким email существует';
+        $errorSignup[] = 'Пользователь с таким email существует';
     }
     if (R::count('users', 'phone = ?', array($data['phone'])) > 0) {
-        $errors[] = 'Пользователь с таким номером телефона существует';
+        $errorSignup[] = 'Пользователь с таким номером телефона существует';
     }
     if (empty($errors)) {
         $user = R::dispense('users');
@@ -28,17 +28,18 @@ if (isset($data['signup'])) {
     }
 }
 if (isset($data['signin'])) {
-    $errors = array();
+    $errorSignin = array();
+    $showError = True;
 
     $user = R::findOne('users', 'email = ?', array($data['email']));
     if ($user) {
         if (password_verify($data['password'], $user->password)) {
             $_SESSION['user'] = $user;
         } else {
-            $errors[] = "Неверный пароль";
+            $errorSignin[] = "Неверный пароль";
         }
     } else {
-        $errors[] = "Неверный email";
+        $errorSignin[] = "Неверный email";
     }
 }
 
@@ -92,6 +93,9 @@ if (isset($data['signin'])) {
                     <button type="submit" name="signin" class="form_btn form_btn-voyti">Войти</button>
                 </p>
                 <p>
+                    <?php if($showError) {echo showError($errorSignin);} ?>
+                </p>
+                <p>
                     <a href="#" class="form_forgot">Восстановить пароль</a>
                 </p>
             </form>
@@ -125,7 +129,7 @@ if (isset($data['signin'])) {
                     <button type="submit" class="form_btn form_btn-signup" name="signup">Зарегистрироваться</button>
                 </p>
                 <p>
-                    <?php if($showError) {echo showError($errors);} ?>
+                    <?php if($showError) {echo showError($errorSignup);} ?>
                 </p>
             </form>
         </div>

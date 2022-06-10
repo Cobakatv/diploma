@@ -36,7 +36,6 @@ $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
                         <li class="menu_liner"><a class="menu_link" href="/catalog.php">Каталог</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
                         <li class="menu_liner"><a class="menu_link" href="/contacts.php">Контакты</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="/contacts.php"><?php echo $user ?></a></li>
                     </ul>
                     <div class="input">
                         <input class="input_text" type="text" placeholder="поиск по каталогу">

@@ -144,15 +144,17 @@ foreach($db_products as $row) {
                 <div class="sale sale-container">
                     <?php for ($i = 0; $i < count($products); $i++) : ?>
                     <div class="sale_card">
+                    <?php if ($products[$i]-> id != NULL) : ?>
                         <div class="card">
-                            <?php if ($products[$i]-> id != NULL) : ?>
+                            
                             <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->modeltype;?>/<?php echo $products[$i]->image;?>" alt="icon-catalog">
                             <a class="sale_btn" href="#"><?php echo $products[$i]->price;?></a>
                             <h3 class="card_text">
                                 <a class="cart_text-link" href="/product.php?id=<?php echo $products[$i]->modelid;?>"><?php echo $products[$i]->name;?></a>
                             </h3>
-                            <?php endif; ?>
+                            
                         </div>
+                        <?php endif; ?>
                     </div>
                     <?php endfor;?>
                 </div>

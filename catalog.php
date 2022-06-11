@@ -1,6 +1,6 @@
 <?php
 require "db.php";
-$db_products = R::findAll('Test');
+$db_products = R::findAll('Models');
 $products = array();
 foreach($db_products as $row) {
     $products[] = $row;
@@ -40,8 +40,6 @@ foreach($db_products as $row) {
                         <li class="menu_liner"><a class="menu_link" href="#">Каталог</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Контакты</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#"><?php echo count($db_products); ?></a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#"><?php echo count($products); ?></a></li>
                         <li class="menu_liner"><a class="menu_link" href="#"><?php echo $products[1]; ?></a></li>
                     </ul>
                     <div class="input">
@@ -145,14 +143,14 @@ foreach($db_products as $row) {
             </div>
             <div class="content">
                 <div class="sale sale-container">
-                    <?php for ($i = 1; $i < count($products); $i++) : ?>
+                    <?php for ($i = 0; $i < count($products); $i++) : ?>
                     <div class="sale_card">
                         <div class="card">
                             <?php if ($products[$i]-> id != NULL) : ?>
-                            <img class="sale-img" src="/img/Catalog/<?php #echo $products[$i]->ModelType;?>/<?php #echo $products[$i]->ImageNames;?>" alt="icon-catalog">
-                            <a class="sale_btn" href="#"><?php #echo $products[$i]->Price;?></a>
+                            <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->ModelType;?>/<?php echo $products[$i]->ImageNames;?>" alt="icon-catalog">
+                            <a class="sale_btn" href="#"><?php echo $products[$i]->Price;?></a>
                             <h3 class="card_text">
-                                <a class="cart_text-link" href="/product.php?id=<?php #echo $products[$i]->id;?>"><?php echo $products[$i]->name;?></a>
+                                <a class="cart_text-link" href="/product.php?id=<?php echo $products[$i]->id;?>"><?php echo $products[$i]->name;?></a>
                             </h3>
                             <?php endif; ?>
                         </div>

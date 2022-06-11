@@ -5,6 +5,7 @@ $products = array();
 foreach($db_products as $row) {
     $products[] = $row;
 }
+$content_counter = 4;
 ?>
 
 

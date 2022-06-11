@@ -1,6 +1,6 @@
 <?php
 require "db.php";
-$db_products = R::findAll('Models');
+$db_products = R::findAll('Test');
 $products = array();
 foreach($db_products as $row) {
     $products = $row;
@@ -42,7 +42,7 @@ foreach($db_products as $row) {
                         <li class="menu_liner"><a class="menu_link" href="#">Контакты</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#"><?php echo count($db_products); ?></a></li>
                         <li class="menu_liner"><a class="menu_link" href="#"><?php echo count($products); ?></a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#"><?php echo $db_products[1]->id; ?></a></li>
+                        <li class="menu_liner"><a class="menu_link" href="#"><?php echo $products; ?></a></li>
                     </ul>
                     <div class="input">
                         <input class="input_text" type="text" placeholder="поиск по каталогу">
@@ -149,10 +149,10 @@ foreach($db_products as $row) {
                     <div class="sale_card">
                         <div class="card">
                             <?php if ($products[$i]-> id != NULL) : ?>
-                            <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->ModelType;?>/<?php echo $products[$i]->ImageNames;?>" alt="icon-catalog">
-                            <a class="sale_btn" href="#"><?php echo $products[$i]->Price;?></a>
+                            <img class="sale-img" src="/img/Catalog/<?php #echo $products[$i]->ModelType;?>/<?php #echo $products[$i]->ImageNames;?>" alt="icon-catalog">
+                            <a class="sale_btn" href="#"><?php #echo $products[$i]->Price;?></a>
                             <h3 class="card_text">
-                                <a class="cart_text-link" href="/product.php?id=<?php echo $products[$i]->id;?>"><?php echo $products[$i]->Name;?></a>
+                                <a class="cart_text-link" href="/product.php?id=<?php #echo $products[$i]->id;?>"><?php echo $products[$i]->name;?></a>
                             </h3>
                             <?php endif; ?>
                         </div>

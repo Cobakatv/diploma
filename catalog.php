@@ -40,7 +40,6 @@ foreach($db_products as $row) {
                         <li class="menu_liner"><a class="menu_link" href="#">Каталог</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Контакты</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#"><?php echo $products[1]->id; ?></a></li>
                     </ul>
                     <div class="input">
                         <input class="input_text" type="text" placeholder="поиск по каталогу">
@@ -147,10 +146,10 @@ foreach($db_products as $row) {
                     <div class="sale_card">
                         <div class="card">
                             <?php if ($products[$i]-> id != NULL) : ?>
-                            <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->ModelType;?>/<?php echo $products[$i]->ImageNames;?>" alt="icon-catalog">
-                            <a class="sale_btn" href="#"><?php echo $products[$i]->Price;?></a>
+                            <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->modeltype;?>/<?php echo $products[$i]->image;?>" alt="icon-catalog">
+                            <a class="sale_btn" href="#"><?php echo $products[$i]->price;?></a>
                             <h3 class="card_text">
-                                <a class="cart_text-link" href="/product.php?id=<?php echo $products[$i]->id;?>"><?php echo $products[$i]->name;?></a>
+                                <a class="cart_text-link" href="/product.php?id=<?php echo $products[$i]->modelid;?>"><?php echo $products[$i]->name;?></a>
                             </h3>
                             <?php endif; ?>
                         </div>

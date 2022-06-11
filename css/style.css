@@ -392,6 +392,10 @@ input{
   background: #fff;
   margin-bottom: 20px;
 }
+.sale-img{
+  width: 196px;
+  height: 146px;
+}
 .sale_title{
   font-size: 20px;
   line-height: 20px;
@@ -420,7 +424,7 @@ input{
   padding: 5px;
   border-radius: 5px;
   position: absolute;
-  top: 6em;
+  top: 5.5em;
   right: 1em;
   transition: 0.5s;
 }

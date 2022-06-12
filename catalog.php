@@ -32,6 +32,7 @@ $page_count = floor(count($products) / $counter);
 
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/nouislider.min.css">
     <link rel="stylesheet" href="/css/catalog.css">
     <title>Elwau</title>
 </head>
@@ -87,69 +88,69 @@ $page_count = floor(count($products) / $counter);
         <div class="container">
             <div class="sidebar">
                 <div class="catalog">
-                    <button class="dropdown-btn">Автомодели</button>
-                    <div class="dropdown-container">
-                        <a href="product.html">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
+                    <div class="search">
+                        <input class="input_search" type="text" placeholder="поиск по каталогу">
                     </div>
-                    <button class="dropdown-btn">Самолеты</button>
-                    <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
+                    <div class="category">
+                        <div class="category-model">
+                            <h3 class="model-title">Автомодели</h3>
+                            <div class="container-checkbox">
+                                <input class="checkbox-input" type="checkbox" id="checkbox1">
+                                <label class="checkbox-label" for="checkbox1">Himoto</label>
+                            </div>
+                        </div>
+                        <div class="category-manufacturer">
+                            <h3 class="manufacturer-title">Производители</h3>
+                            <div class="container-checkbox">
+                                <input class="checkbox-input" type="checkbox" id="checkbox2">
+                                <label class="checkbox-label" for="checkbox2">Himoto</label>
+                            </div>
+                        </div>
+                        
                     </div>
-                    <button class="dropdown-btn">Вертолеты</button>
-                    <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
-                    </div>
-                    <button class="dropdown-btn">Катера</button>
-                    <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
-                    </div>
-                    <button class="dropdown-btn">Яхты</button>
-                    <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
-                    </div>
-                    <button class="dropdown-btn">Интстументы</button>
-                    <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
-                    </div>
-                </div>
-                <div class="news">
-                    <div class="sidebar-news">
-                        <p class="date">12.05.2022</p>
-                        <h3 class="news-title">Много скидок!</h3>
-                        <p class="news-text">
-                            Скоро ноябрь, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбелеем.
-                        </p>
-                    </div>
-                    <div class="sidebar-news">
-                        <p class="date">12.05.2022</p>
-                        <h3 class="news-title">Много скидок!</h3>
-                        <p class="news-text">
-                            Скоро ноябрь, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбелеем.
-                        </p>
-                    </div>
-                    <div class="sidebar-news">
-                        <p class="date">12.05.2022</p>
-                        <h3 class="news-title">Много скидок!</h3>
-                        <p class="news-text">
-                            Скоро ноябрь, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбелеем.
-                        </p>
+                    <div class="filters-price__price">
+                        <h3 class="filters-price_title">Цена</h3>
+                        <div class="filters-price_slider" id="range-slider"></div>
+                        <div class="filters-price_inputs">
+                            <label class="filters-price_label">
+                                <span class="filters-price_text">от</span>
+                                <input type="number" class="filters-price_input" id="input1" min="200" max="10000" placeholder="200">
+                                <span class="filters-price_text">₴</span>
+                            </label>
+                            <label class="filters-price_label">
+                                <span class="filters-price_text">от</span>
+                                <input type="number" class="filters-price_input" id="input2" min="200" max="10000" placeholder="10000">
+                                <span class="filters-price_text">₴</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="sidebar_mail">
+                <!-- <div class="news">
+                    <div class="sidebar-news">
+                        <p class="date">12.05.2022</p>
+                        <h3 class="news-title">Много скидок!</h3>
+                        <p class="news-text">
+                            Скоро ноябрь, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбелеем.
+                        </p>
+                    </div>
+                    <div class="sidebar-news">
+                        <p class="date">12.05.2022</p>
+                        <h3 class="news-title">Много скидок!</h3>
+                        <p class="news-text">
+                            Скоро ноябрь, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбелеем.
+                        </p>
+                    </div>
+                    <div class="sidebar-news">
+                        <p class="date">12.05.2022</p>
+                        <h3 class="news-title">Много скидок!</h3>
+                        <p class="news-text">
+                            Скоро ноябрь, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбелеем.
+                        </p>
+                    </div>
+                </div> -->
+                <!-- <div class="sidebar_mail">
                     <a href="#" class="mail-siderbar sidebar_mail-email">Написать нам</a>
-                </div>
+                </div> -->
             </div>
             <div class="content">
                 <div class="sale sale-container">
@@ -206,6 +207,8 @@ $page_count = floor(count($products) / $counter);
         </div>
     </footer>
     <script src="/js/main.js"></script>
+    <script src="/js/nouislider.min.js"></script>
+    <script src="/js/rage-slider.js"></script>
 </body>
 
 </html>

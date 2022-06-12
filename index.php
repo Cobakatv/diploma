@@ -96,33 +96,55 @@ foreach ($db_products as $row) {
                     </div>
                     <button class="dropdown-btn">Самолеты</button>
                     <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
+                    <?php for($i = 0;$i <= count($products); $i++) :?>
+                            <?php if ($products[$i]->id != null) :?>
+                                <?php if ($products[$i]->modeltype == "airplane") :?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
+                                <?php endif;?>
+                            <?php endif;?>
+                        <?php endfor;?>
                     </div>
                     <button class="dropdown-btn">Вертолеты</button>
                     <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
+                    <?php for($i = 0;$i <= count($products); $i++) :?>
+                            <?php if ($products[$i]->id != null) :?>
+                                <?php if ($products[$i]->modeltype == "helicopter") :?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
+                                <?php endif;?>
+                            <?php endif;?>
+                        <?php endfor;?>
                     </div>
                     <button class="dropdown-btn">Катера</button>
                     <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
+                    <?php for($i = 0;$i <= count($products); $i++) :?>
+                            <?php if ($products[$i]->id != null) :?>
+                                <?php if ($products[$i]->modeltype == "boat") :?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
+                                <?php endif;?>
+                            <?php endif;?>
+                        <?php endfor;?>
                     </div>
                     <button class="dropdown-btn">Яхты</button>
                     <div class="dropdown-container">
                         <a href="#">Ссылка 1</a>
                         <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
+                        <a href="#">Ссылка 3</a><?php for($i = 0;$i <= count($products); $i++) :?>
+                            <?php if ($products[$i]->id != null) :?>
+                                <?php if ($products[$i]->modeltype == "yacht") :?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
+                                <?php endif;?>
+                            <?php endif;?>
+                        <?php endfor;?>
                     </div>
                     <button class="dropdown-btn">Интстументы</button>
                     <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
+                    <?php for($i = 0;$i <= count($products); $i++) :?>
+                            <?php if ($products[$i]->id != null) :?>
+                                <?php if ($products[$i]->modeltype == "instruments") :?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
+                                <?php endif;?>
+                            <?php endif;?>
+                        <?php endfor;?>
                     </div>
                 </div>
                 <div class="news">

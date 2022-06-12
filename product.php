@@ -37,7 +37,6 @@ $product = R::findOne('Models', 'modelid = ?', [$modelid]);
             <div class="container">
                 <nav class="nav">
                     <ul class="menu">
-                        <li class="menu_liner"><a class="menu_link" href="/index.php">Главная</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">О компани</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Каталог</a></li>
                         <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
@@ -52,7 +51,7 @@ $product = R::findOne('Models', 'modelid = ?', [$modelid]);
         <div class="header-info">
             <div class="container">
                 <div class="header-local">
-                    <a class="logo" href="#"><img src="/img/Header/LOGO.png" alt="LOGO"></a>
+                    <a class="logo" href="/index.php"><img src="/img/Header/LOGO.png" alt="LOGO"></a>
                     <div class="header-contact-left">
                         <div class="header-contact_tell">
                             <a class="tell" href="tel:380981927420">+(380) <span class="tell-color">98-192-74-20</span>,</a>
@@ -181,7 +180,9 @@ $product = R::findOne('Models', 'modelid = ?', [$modelid]);
                                 <?php endif;?>
                             </tr>
                         </table>
+                        <?php if ($product->amount > 0) :?>
                         <button class="btn btn-product">Купить</button>
+                        <?php endif;?>
                         <div class="social">
                             <h3 class="social-text">Поделиться с друзьями</h3>
                             <a href="https://www.facebook.com" target="_blank"><img class="social-icon social-fb" src="/img/social/facebook.png" alt="facebook"></a>
@@ -193,46 +194,8 @@ $product = R::findOne('Models', 'modelid = ?', [$modelid]);
                 <div class="product-description">
                     <h3 class="description-title">Описание</h3>
                     <p class="description-text">
-                        Полностью собранное шасси, установленный двигатель Kyosho G20 Stock,
-                        электронный регулятор скорости PERFEX KA-15, микроприёмник PERFEX KR-6,
-                        сервомашинку PERFEX KS-101BK, покрашенный корпус с наклейками,
-                        двухканальный передатчик Perfex/Futaba KT-6, инструкцию, трубочку для антенны приёмника,
-                        крестовой/колёсный ключ.
+                       <?php echo $product->description;?>
                     </p>
-
-                    <table class="shor-desc">
-                        <tr class="slider_color">
-                            <td>Длина:</td>
-                            <td class="indent">380 мм</td>
-                        </tr>
-                        <tr>
-                            <td>Ширина:</td>
-                            <td class="indent">248 мм</td>
-                        </tr>
-                        <tr class="slider_color">
-                            <td>Высота:</td>
-                            <td class="indent">145 мм</td>
-                        </tr>
-                        <tr>
-                            <td>Клиренс:</td>
-                            <td class="indent">24 мм</td>
-                        </tr>
-                        <tr class="slider_color">
-                            <td>Длина колесной базы:</td>
-                            <td class="indent">270 мм</td>
-                        </tr>
-                        <tr>
-                            <td>Колея (передняя/задняя):</td>
-                            <td class="indent">176/176 мм</td>
-                        </tr>
-                        <tr class="slider_color">
-                            <td>Ширина колёс (перед/зад)</td>
-                            <td class="indent">34/42 мм</td>
-                        </tr>
-                        <tr>
-                            <td>Вес (приблизительно)</td>
-                            <td class="indent">1650 г</td>
-                        </tr>
                     </table>
                 </div>
             </div>

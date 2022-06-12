@@ -1,11 +1,14 @@
 <?php
+$page = $_GET['page'];
 require "db.php";
 $db_products = R::findAll('Models');
 $products = array();
 foreach ($db_products as $row) {
     $products[] = $row;
 }
-$content_counter = 4;
+$content_counter = 3;
+$line_counter = floor(count($products) / $content_counter);
+$page_count = floor($line_counter / 7);
 ?>
 
 
@@ -157,10 +160,11 @@ $content_counter = 4;
                             </div>
                         <?php endfor; ?>
                     </div>
-                    <div class="page_list">
-                        <a href="#"><button class="page-button">1</button></a>
-                    </div>
-
+                    <?php for ($p = 0; $p <= $page_count; $p++) :?>
+                        <div class="page_list">
+                            <a href="/catalog.php?page=<?php echo $p ?>"><button class="page-button"><?php $p +1 ?></button></a>
+                        </div>
+                    <?php endfor;?>
                 </div>
             </div>
         </div>

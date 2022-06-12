@@ -1,3 +1,14 @@
+<?php
+$modelid = $_GET['id'];
+require 'db.php';
+if ($user != null) {
+    $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+}
+$product = R::findOne('Models', 'modelid = ?', $modelid);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -56,7 +67,12 @@
                             <a class="header-shop" href="#">В вашей корзине пусто</a>
                         </div>
                         <div class="header-contact-ak">
-                            <a class="header-ak" href="#">Войти в личный кабинет</a>
+                        <?php if($user) : ?>
+                                <a class="header-ak" href="#">Здравствуйте, <?php echo $user->firstName;?></a>
+                                <a class="header-ak" href="/logout.php" >Выйти</a>
+                            <?php else :?>
+                                <a class="header-ak" href="signup.php">Войти в личный кабинет</a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -137,22 +153,32 @@
             <div class="content">
                 <div class="content-product">
                     <div class="img-product">
-                        <img src="/img/Catalog/kyosho-lazer-zx5.png" alt="kyosho-lazer-zx5">
+                        <?php if ($product->image != NULL) :?>
+                            <img src="/img/Catalog/<?php echo $product->modeltype;?>/<?php echo $product->image;?>" alt="kyosho-lazer-zx5">
+                        <?php endif; ?>
                     </div>
                     <div class="short-description">
-                        <h3 class="product-title">Kyosho Lazer ZX-5 (синий)</h3>
+                        <h3 class="product-title"><?php echo $product->name; ?></h3>
                         <table class="shor-des">
                             <tr>
                                 <td>Производитель:</td>
-                                <td class="indent">Kyosho</td>
+                                <?php if ($product->producer != NULL) :?>
+                                    <td class="indent"><?php echo $product->producer;?></td>
+                                <?php else: ?>
+                                    <td class="indent">Неизвестно</td>
+                                <?php endif; ?>
                             </tr>
                             <tr>
                                 <td>Модель:</td>
-                                <td class="indent">30861T4B</td>
+                                <td class="indent"><?php echo $product->modelid;?></td>
                             </tr>
                             <tr>
                                 <td>Наличие:</td>
-                                <td class="indent">В наличии</td>
+                                <?php if ($product->amount > 0) :?>
+                                    <td class="indent">В наличии</td>
+                                <?php else :?>
+                                    <td class="indent">Нет в наличии</td>
+                                <?php endif;?>
                             </tr>
                         </table>
                         <button class="btn btn-product">Купить</button>

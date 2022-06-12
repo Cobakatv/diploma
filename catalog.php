@@ -1,6 +1,9 @@
 <?php
 $page = $_GET['page'];
 require "db.php";
+if ($user != null) {
+    $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+}
 $db_products = R::findAll('Models');
 $products = array();
 foreach ($db_products as $row) {
@@ -68,7 +71,12 @@ $page_count = floor(count($products) / $counter);
                             <a class="header-shop" href="#">В вашей корзине пусто</a>
                         </div>
                         <div class="header-contact-ak">
-                            <a class="header-ak" href="signup.html">Войти в личный кабинет</a>
+                        <?php if($user) : ?>
+                                <a class="header-ak" href="#">Здравствуйте, <?php echo $user->firstName;?></a>
+                                <a class="header-ak" href="/logout.php" >Выйти</a>
+                            <?php else :?>
+                                <a class="header-ak" href="signup.php">Войти в личный кабинет</a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

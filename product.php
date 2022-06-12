@@ -4,7 +4,7 @@ require 'db.php';
 if ($user != null) {
     $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
 }
-$product = R::findOne('Models', 'modelid = ?', $modelid);
+$product = R::findOne('Models', 'modelid = ?', [$modelid]);
 
 ?>
 

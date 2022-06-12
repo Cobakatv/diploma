@@ -162,7 +162,7 @@ $page_count = floor($line_counter / 7);
                     </div>
                     <?php for ($p = 0; $p <= $page_count; $p++) :?>
                         <div class="page_list">
-                            <a href="/catalog.php?page=<?php echo $p ?>"><button class="page-button"><?php $p + 1; ?></button></a>
+                            <a href="/catalog.php?page=<?php echo $p ?>"><button class="page-button"><?php echo $p + 1; ?></button></a>
                         </div>
                     <?php endfor;?>
                 </div>

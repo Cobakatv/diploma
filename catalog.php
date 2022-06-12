@@ -159,11 +159,11 @@ $page_count = floor(count($products) / $counter);
                             </div>
                         <?php endfor; ?>
                     </div>
-                    <?php for ($p = 0; $p <= $page_count; $p++) :?>
                         <div class="page_list">
-                            <a href="/catalog.php?page=<?php echo $p ?>"><button class="page-button"><?php echo $p + 1; ?></button></a>
+                            <?php for ($p = 0; $p <= $page_count; $p++) :?>
+                                <a href="/catalog.php?page=<?php echo $p ?>"><button class="page-button"><?php echo $p + 1; ?></button></a>
+                            <?php endfor;?>
                         </div>
-                    <?php endfor;?>
                 </div>
             </div>
         </div>

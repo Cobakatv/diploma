@@ -1,6 +1,13 @@
 <?php
 require 'db.php';
-$user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+if ($user != null) {
+    $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+}
+$db_products = R::findAll('Models');
+$products = array();
+foreach ($db_products as $row) {
+    $products[] = $row;
+}
 
 ?>
 
@@ -79,9 +86,13 @@ $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
                 <div class="catalog">
                     <button class="dropdown-btn">Автомодели</button>
                     <div class="dropdown-container">
-                        <a href="product.php">Ссылка 1</a>
-                        <a href="#">Ссылка 2</a>
-                        <a href="#">Ссылка 3</a>
+                        <?php for($i = 0;$i <= count($products); $i++) :?>
+                            <?php if ($products[$i]->id != null) :?>
+                                <?php if ($products[$i]->modeltype == "automodel") :?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[i]->name;?></a>
+                                <?php endif;?>
+                            <?php endif;?>
+                        <?php endfor;?>
                     </div>
                     <button class="dropdown-btn">Самолеты</button>
                     <div class="dropdown-container">

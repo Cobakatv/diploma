@@ -89,7 +89,7 @@ foreach ($db_products as $row) {
                         <?php for($i = 0;$i <= count($products); $i++) :?>
                             <?php if ($products[$i]->id != null) :?>
                                 <?php if ($products[$i]->modeltype == "automodel") :?>
-                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[i]->name;?></a>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
                                 <?php endif;?>
                             <?php endif;?>
                         <?php endfor;?>

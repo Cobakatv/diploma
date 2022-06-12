@@ -6,7 +6,7 @@ $products = array();
 foreach ($db_products as $row) {
     $products[] = $row;
 }
-$counter = 21;
+$counter = 3;
 $page_count = floor(count($products) / $counter);
 ?>
 

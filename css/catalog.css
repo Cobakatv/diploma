@@ -9,3 +9,19 @@
     align-items: center;
     justify-content: center;
 }
+.page_list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-button{
+    background-color: #E27D55;
+    padding: 5px 10px;
+    margin-right: 5px;
+    color: #fff;
+    border-radius: 50%;  
+    transition: 0.5s; 
+}
+.page-button:hover{
+    background-color: #ec4807;
+}

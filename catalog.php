@@ -7,8 +7,8 @@ foreach ($db_products as $row) {
     $products[] = $row;
 }
 $content_counter = 3;
-$line_counter = floor(count($products) / $content_counter);
-$page_count = floor($line_counter / 7);
+$page_count = floor((count($products) / $content_counter) / 7);
+$counter = 21;
 ?>
 
 
@@ -148,7 +148,7 @@ $page_count = floor($line_counter / 7);
                 <div class="sale sale-container">
 
                     <div class="sale_card">
-                        <?php for ($i = 0; $i < count($products); $i++) : ?>
+                        <?php for ($i = $page*$counter; $i < ($page+1)*$counter; $i++) : ?>
                             <div class="card">
                                 <?php if ($products[$i]->id != NULL) : ?>
                                     <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->modeltype; ?>/<?php echo $products[$i]->image; ?>" alt="icon-catalog">

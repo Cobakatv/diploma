@@ -1,5 +1,5 @@
 <?php 
-
+require 'db.php';
 
 ?>
 
@@ -18,24 +18,28 @@
 
 <body>
     <div class="input-input">
-        <a> Тип товара </a>
-        <input type="text">
-        <a> id товара </a>
-        <input type="text">
-        <a> Название товара </a>
-        <input type="text">
-        <a> Производитель </a>
-        <input type="text">
-        <a> Тип товара </a>
-        <input type="text">
-        <a> Цена </a>
-        <input type="text">
-        <a> Количество </a>
-        <input type="text">
-        <a> Картинка </a>
-        <input type="text">
-        <a> Описание </a>
-        <input type="text">
+        <form action="addproduct" method="POST">
+            <a> Тип товара </a>
+            <input type="text" name="typeofmodel">
+            <a> id товара </a>
+            <input type="text" name="modelid">
+            <a> Название товара </a>
+            <input type="text" name="name">
+            <a> Производитель </a>
+            <input type="text" name="producer">
+            <a> Цена </a>
+            <input type="text" name="price">
+            <a> Скидка, если нету - оставьте пустым </a>
+            <input type="text" name="discount">
+            <a> Количество </a>
+            <input type="text" name="amount">
+            <a> Описание </a>
+            <input type="text" name="description">
+            <a> Картинки </a>
+            <input type="text" name="image">
+            <button type="submit" name="submit"> Отправить </button>
+        </form>
+
 
     </div>
 </body>

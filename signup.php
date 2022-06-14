@@ -134,7 +134,7 @@
                     <input type="password" class="form_input repeatregisterUserPassword" id="repeatregisterUserPassword" name="repeatregisterUserPassword" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Повторите правильный пароль" placeholder="Повторите пароль" required>
                 </p>
                 <p>
-                    <button type="submit" class="form_btn form_btn-signup" id="button" name="button">Зарегистрироваться</button>
+                    <button type="submit" class="form_btn form_btn-signup" id="button" name="signup">Зарегистрироваться</button>
                 </p>
                 <p>
                     <?php if ($showErrorSignup) {

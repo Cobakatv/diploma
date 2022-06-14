@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
         require 'db.php';
         $data = $_POST;
         $showErrorSignin = False;
@@ -49,7 +49,7 @@
             }
         }
 
-        ?> -->
+        ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -99,9 +99,9 @@
                     <button type="submit" name="signin" class="form_btn form_btn-voyti">Войти</button>
                 </p>
                 <p>
-                    <!-- <?php if ($showErrorSignin) {
+                    <?php if ($showErrorSignin) {
                                 echo showError($errorSignin);
-                            } ?> -->
+                            } ?> 
                 </p>
                 <p>
                     <a href="#" class="form_forgot">Восстановить пароль</a>
@@ -137,9 +137,9 @@
                     <button type="submit" class="form_btn form_btn-signup" id="button" name="button">Зарегистрироваться</button>
                 </p>
                 <p>
-                    <!-- <?php if ($showErrorSignup) {
+                    <?php if ($showErrorSignup) {
                                 echo showError($errorSignup);
-                            } ?> -->
+                            } ?> 
                 </p>
             </form>
         </div>

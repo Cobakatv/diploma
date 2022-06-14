@@ -18,7 +18,7 @@ require 'db.php';
 
 <body>
     <div class="input-input">
-        <form action="addproduct" method="POST">
+        <form action="addproduct.php" method="POST">
             <a> Тип товара </a>
             <input type="text" name="typeofmodel">
             <a> id товара </a>

@@ -1,3 +1,10 @@
+<?php 
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -11,23 +18,23 @@
 
 <body>
     <div class="input-input">
-
+        <a> Тип товара </a>
         <input type="text">
-
+        <a> id товара </a>
         <input type="text">
-
+        <a> Название товара </a>
         <input type="text">
-
+        <a> Производитель </a>
         <input type="text">
-
+        <a> Тип товара </a>
         <input type="text">
-
+        <a> Цена </a>
         <input type="text">
-
+        <a> Количество </a>
         <input type="text">
-
+        <a> Картинка </a>
         <input type="text">
-
+        <a> Описание </a>
         <input type="text">
 
     </div>

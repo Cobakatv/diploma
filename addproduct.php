@@ -56,7 +56,7 @@
     $db_producers = R::findAll('producers');
     $allProducers = array();
     foreach ($db_producers as $row) {
-        $types[] = $row;
+        $allProducers[] = $row;
     }
 ?>
 
@@ -91,7 +91,7 @@
                     <?php for ($i = 0; $i < count($allProducers);$i++) : ?>
                         <option value="<?php echo $allProducers[$i]->producer?>"><?php echo $allProducers[$i]->producer ?></option>
                     <?php endfor;?>
-                    <option value="newProducer" contenteditable="true"></option>
+                    <option value="newProducer" contenteditable="true">Новый производитель</option>
             </select>
             <a> Цена </a>
             <input type="text" name="price">

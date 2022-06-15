@@ -75,6 +75,7 @@
                         <option value="<?php echo $types[$i]->modeltypes?>"><?php echo $types[$i]->modeltypes?></option>
                     <?php endfor; ?>
             </select>
+            <a></a>
             <a> id товара </a>
             <input type="text" name="modelid">
             <a> Название товара </a>

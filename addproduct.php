@@ -41,6 +41,7 @@
             $product ->description = $data['description'];
             $product ->images = $_FILES['image']['name'];
             $path = "img/Catalog/". $data['modeltype'] . "/" . $_FILES['image']['name'];
+            R::store($product);
             move_uploaded_file($_FILES["image"]["tmp_name"], $path);
         } else {
             $showError = True;

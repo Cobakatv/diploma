@@ -30,7 +30,8 @@
             $error[] = 'Укажите картинку товара';
         }
         if(empty($error)) {
-            $product = R::dispence('Models');
+            R::ext('dispence');
+            $product = R::dispense('Models');
             $product ->modelid = $data['modelid'];
             $product ->modeltype = $data['modeltype'];
             $product ->name = $data['name'];
@@ -75,7 +76,6 @@
                         <option value="<?php echo $types[$i]->modeltypes?>"><?php echo $types[$i]->modeltypes?></option>
                     <?php endfor; ?>
             </select>
-            <a>/br</a>
             <a> id товара </a>
             <input type="text" name="modelid">
             <a> Название товара </a>

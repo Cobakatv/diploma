@@ -3,7 +3,7 @@ require 'db.php';
 
 $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
 
-$db_products = R::findAll('Models');
+$db_products = R::findAll('models');
 $products = array();
 foreach ($db_products as $row) {
     $products[] = $row;

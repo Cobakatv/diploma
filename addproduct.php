@@ -17,8 +17,8 @@
         if (trim($data['price']) == '0') {
             $error[] = 'Укажите цену товара';
         }
-        if (trim($data['discount']) == '0') {
-            $data['discount'] = '';
+        if (trim($data['discount']) == '0' || trim($data['discount']) == '') {
+            $data['discount'] = NULL;
         }
         if (trim($data['amount']) == '') {
             $error[] = 'Укажите количество товара';
@@ -52,6 +52,12 @@
     foreach ($db_types as $row) {
         $types[] = $row;
     }
+
+    $db_producers = R::findAll('producers');
+    $allProducers = array();
+    foreach ($db_producers as $row) {
+        $types[] = $row;
+    }
 ?>
 
 
@@ -81,7 +87,12 @@
             <a> Название товара </a>
             <input type="text" name="name">
             <a> Производитель </a>
-            <input type="text" name="producer">
+            <select name="producer">
+                    <?php for ($i = 0; $i < count($allProducers);$i++) : ?>
+                        <option value="<?php echo $allProducers[$i]->producer?>"><?php echo $allProducers[$i]->producer ?></option>
+                    <?php endfor;?>
+                    <option value="newProducer" contenteditable="true"></option>
+            </select>
             <a> Цена </a>
             <input type="text" name="price">
             <a> Скидка, если нету - оставьте пустым </a>

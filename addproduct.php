@@ -71,10 +71,9 @@
         <form action="addproduct.php" enctype="multipart/form-data" method="POST">
             <a> Тип товара </a>
             <select name="modeltype"> 
-                <?php for ($i = 0;$i <= count($types);$i++) :?>
+                <?php for ($i = 0;$i <= count($types[]);$i++) :?>
                         <option value="<?php echo $types[$i]->modeltypes?>"><?php echo $types[$i]->modeltypes?></option>
                     <?php endfor; ?>
-              
             </select>
             <a> id товара </a>
             <input type="text" name="modelid">

@@ -30,8 +30,7 @@
             $error[] = 'Укажите картинку товара';
         }
         if(empty($error)) {
-            R::ext('dispence');
-            $product = R::dispense('Models');
+            $product = R::dispense('models');
             $product ->modelid = $data['modelid'];
             $product ->modeltype = $data['modeltype'];
             $product ->name = $data['name'];

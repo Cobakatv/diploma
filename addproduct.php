@@ -26,7 +26,7 @@
         if (trim($data['description']) == '') {
             $error[] = 'Укажите описание товара';
         }
-        if (trim($data['image']) == '') {
+        if ($_FILES && $_FILES["image"]["error"] != UPLOAD_ERR_OK) {
             $error[] = 'Укажите картинку товара';
         }
         if(empty($error)) {
@@ -39,12 +39,18 @@
             $product ->discount = $data['discount'];
             $product ->amount = $data['amount'];
             $product ->description = $data['description'];
-            $product ->images = $data['image'];
+            $product ->images = $_FILES['image']['name'];
+            $path = "img/Catalog/$data['modeltype']/$_FILES['image']['name']";
+            move_uploaded_file($_FILES["image"]["tmp_name"], $path);
         } else {
             $showError = True;
         }
     }
-
+    $db_types = R::findAll('Types');
+    $types = array();
+    foreach ($db_types as $row) {
+        $types[] = $row;
+    }
 ?>
 
 
@@ -62,9 +68,14 @@
 
 <body>
     <div class="input-input">
-        <form action="addproduct.php" method="POST">
+        <form action="addproduct.php" enctype="multipart/form-data" method="POST">
             <a> Тип товара </a>
-            <input type="text" name="modeltype">
+            <select name="modeltype"> 
+                <?php for ($i = 0;$i <= count($types);$i++) :?>
+                        <option value="<?php echo $types[$i]->modeltypes?>"><?php echo $types[$i]->modeltypes?></option>
+                    <?php endfor; ?>
+              
+            </select>
             <a> id товара </a>
             <input type="text" name="modelid">
             <a> Название товара </a>
@@ -80,7 +91,7 @@
             <a> Описание </a>
             <input type="text" name="description">
             <a> Картинки </a>
-            <input type="text" name="image">
+            <input type="file" name="image" size="10">
             <button type="submit" name="submit"> Отправить </button>
             <a><?php if ($showError) {echo showError($error);} ?> </a>
         </form>

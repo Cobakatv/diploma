@@ -35,6 +35,34 @@ foreach ($db_products as $row) {
 
 <body>
     <header class="header">
+        <div id="popup" class="popup">
+            <div class="popup-body">
+                <div class="popup-content">
+                    <a href="#" class="popup-close">X</a>
+                    <div class="popup-title">
+                        <h2>Написать нам</h2>
+                    </div>
+                    <div class="popup-form">
+                        <form action="#" id="poputs">
+                            <p>
+                                <input type="text" class="form_input" id="name" name="firstName" pattern="^[А-ЯЁ][а-яё]*$" title="Введите правильный имя в указоному формате: Только русские буквы" placeholder="Имя" required>
+                            </p>
+                            <p>
+                                <input type="mail" class="form_input" id="email" name="email" pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" title="введите правильный email в указоному формате: elwau@gmail.com" placeholder="email" required>
+                            </p>
+                            <p>
+                                <textarea class="popup-textarea" name="comment" cols="30" rows="4" placeholder="Сообщение" required></textarea>
+                            </p>
+                            <p>
+                                <button type="submit" class="popup-btn" name="popup-btn" id="popup-btn">Отправить</button>
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <div class="header-top">
             <div class="container">
                 <nav class="nav">
@@ -63,7 +91,7 @@ foreach ($db_products as $row) {
                             <a class="tell-right" href="tel:380971256912">(380) <span class="tell-color">97-125-69-12</span></a>
                         </div>
                         <div class="header-contact_mail">
-                            <a class="header-mail" href="#">Написать сообщение</a>
+                            <a class="header-mail" href="#popup">Написать сообщение</a>
                         </div>
                     </div>
                     <div class="header-contact_right">
@@ -71,10 +99,10 @@ foreach ($db_products as $row) {
                             <a class="header-shop" href="#">В вашей корзине пусто</a>
                         </div>
                         <div class="header-contact-ak">
-                            <?php if($user) : ?>
-                                <a class="header-ak" href="#">Здравствуйте, <?php echo $user->firstName;?></a>
-                                <a class="header-ak" href="/logout.php" >Выйти</a>
-                            <?php else :?>
+                            <?php if ($user) : ?>
+                                <a class="header-ak" href="#">Здравствуйте, <?php echo $user->firstName; ?></a>
+                                <a class="header-ak" href="/logout.php">Выйти</a>
+                            <?php else : ?>
                                 <a class="header-ak" href="signup.php">Войти в личный кабинет</a>
                             <?php endif; ?>
                         </div>
@@ -89,63 +117,63 @@ foreach ($db_products as $row) {
                 <div class="catalog">
                     <button class="dropdown-btn">Автомодели</button>
                     <div class="dropdown-container">
-                        <?php for($i = 0;$i <= count($products); $i++) :?>
-                            <?php if ($products[$i]->id != null) :?>
-                                <?php if ($products[$i]->modeltype == "automodel") :?>
-                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
-                                <?php endif;?>
-                            <?php endif;?>
-                        <?php endfor;?>
+                        <?php for ($i = 0; $i <= count($products); $i++) : ?>
+                            <?php if ($products[$i]->id != null) : ?>
+                                <?php if ($products[$i]->modeltype == "automodel") : ?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name; ?></a>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endfor; ?>
                     </div>
                     <button class="dropdown-btn">Самолеты</button>
                     <div class="dropdown-container">
-                    <?php for($i = 0;$i <= count($products); $i++) :?>
-                            <?php if ($products[$i]->id != null) :?>
-                                <?php if ($products[$i]->modeltype == "airplane") :?>
-                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
-                                <?php endif;?>
-                            <?php endif;?>
-                        <?php endfor;?>
+                        <?php for ($i = 0; $i <= count($products); $i++) : ?>
+                            <?php if ($products[$i]->id != null) : ?>
+                                <?php if ($products[$i]->modeltype == "airplane") : ?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name; ?></a>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endfor; ?>
                     </div>
                     <button class="dropdown-btn">Вертолеты</button>
                     <div class="dropdown-container">
-                    <?php for($i = 0;$i <= count($products); $i++) :?>
-                            <?php if ($products[$i]->id != null) :?>
-                                <?php if ($products[$i]->modeltype == "helicopter") :?>
-                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
-                                <?php endif;?>
-                            <?php endif;?>
-                        <?php endfor;?>
+                        <?php for ($i = 0; $i <= count($products); $i++) : ?>
+                            <?php if ($products[$i]->id != null) : ?>
+                                <?php if ($products[$i]->modeltype == "helicopter") : ?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name; ?></a>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endfor; ?>
                     </div>
                     <button class="dropdown-btn">Катера</button>
                     <div class="dropdown-container">
-                    <?php for($i = 0;$i <= count($products); $i++) :?>
-                            <?php if ($products[$i]->id != null) :?>
-                                <?php if ($products[$i]->modeltype == "boat") :?>
-                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
-                                <?php endif;?>
-                            <?php endif;?>
-                        <?php endfor;?>
+                        <?php for ($i = 0; $i <= count($products); $i++) : ?>
+                            <?php if ($products[$i]->id != null) : ?>
+                                <?php if ($products[$i]->modeltype == "boat") : ?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name; ?></a>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endfor; ?>
                     </div>
                     <button class="dropdown-btn">Яхты</button>
                     <div class="dropdown-container">
-                        <?php for($i = 0;$i <= count($products); $i++) :?>
-                            <?php if ($products[$i]->id != null) :?>
-                                <?php if ($products[$i]->modeltype == "yacht") :?>
-                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
-                                <?php endif;?>
-                            <?php endif;?>
-                        <?php endfor;?>
+                        <?php for ($i = 0; $i <= count($products); $i++) : ?>
+                            <?php if ($products[$i]->id != null) : ?>
+                                <?php if ($products[$i]->modeltype == "yacht") : ?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name; ?></a>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endfor; ?>
                     </div>
                     <button class="dropdown-btn">Интстументы</button>
                     <div class="dropdown-container">
-                    <?php for($i = 0;$i <= count($products); $i++) :?>
-                            <?php if ($products[$i]->id != null) :?>
-                                <?php if ($products[$i]->modeltype == "instruments") :?>
-                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name;?></a>
-                                <?php endif;?>
-                            <?php endif;?>
-                        <?php endfor;?>
+                        <?php for ($i = 0; $i <= count($products); $i++) : ?>
+                            <?php if ($products[$i]->id != null) : ?>
+                                <?php if ($products[$i]->modeltype == "instruments") : ?>
+                                    <a href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name; ?></a>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endfor; ?>
                     </div>
                 </div>
                 <div class="news">
@@ -172,7 +200,7 @@ foreach ($db_products as $row) {
                     </div>
                 </div>
                 <div class="sidebar_mail">
-                    <a href="#" class="mail-siderbar sidebar_mail-email">Написать нам</a>
+                    <a href="#popup" class="mail-siderbar sidebar_mail-email">Написать нам</a>
                 </div>
             </div>
             <div class="content">
@@ -331,6 +359,7 @@ foreach ($db_products as $row) {
 
     <script src="/js/main.js"></script>
     <script src="/js/slider.js"></script>
+    <script src="/js/popup.js"></script>
 </body>
 
 </html>

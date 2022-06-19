@@ -2,6 +2,13 @@
     require 'db.php';
     $data = $_POST;
     $showError = false;
+    if(isset($_SESSION['user'])) {
+        if($_SESSION['user']->email != "elwau.pp.ua@gmail.com") {
+            header("Location: 404");
+        }
+    } else {
+        header("Location: 404");
+    }
 
     if (isset($data['submit'])) {
         $error = array();

@@ -1,15 +1,15 @@
-<!-- <?php
-        require 'db.php';
-        if ($user != null) {
-            $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
-        }
-        $db_products = R::findAll('Models');
-        $products = array();
-        foreach ($db_products as $row) {
-            $products[] = $row;
-        }
+<?php
+require 'db.php';
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
+}
+$db_products = R::findAll('Models');
+$products = array();
+foreach ($db_products as $row) {
+    $products[] = $row;
+}
 
-        ?> -->
+?>
 
 
 <!DOCTYPE html>

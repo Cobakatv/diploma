@@ -1,8 +1,8 @@
 <?php
 require 'db.php';
-
-$user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
-
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
+}
 $db_products = R::findAll('models');
 $products = array();
 foreach ($db_products as $row) {

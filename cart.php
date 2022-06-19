@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 require 'db.php';
 if ($user != null) {
     $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
@@ -9,7 +9,7 @@ foreach ($db_products as $row) {
     $products[] = $row;
 }
 
-?> -->
+?>
 
 
 <!DOCTYPE html>

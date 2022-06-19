@@ -1,10 +1,10 @@
 <?php
 $modelid = $_GET['id'];
 require 'db.php';
-if ($user != null) {
-    $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
 }
-$product = R::findOne('Models', 'modelid = ?', [$modelid]);
+$product = R::findOne('models', 'modelid = ?', [$modelid]);
 
 ?>
 
@@ -181,7 +181,7 @@ $product = R::findOne('Models', 'modelid = ?', [$modelid]);
                 <div class="content-product">
                     <div class="img-product">
                         <?php if ($product->image != NULL) :?>
-                            <img src="/img/Catalog/<?php echo $product->modeltype;?>/<?php echo $product->image;?>" alt="kyosho-lazer-zx5">
+                            <img src="/img/Catalog/<?php echo $product->modeltype;?>/<?php echo $product->images;?>" alt="kyosho-lazer-zx5">
                         <?php endif; ?>
                     </div>
                     <div class="short-description">

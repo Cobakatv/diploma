@@ -180,9 +180,7 @@ $product = R::findOne('models', 'modelid = ?', [$modelid]);
             <div class="content">
                 <div class="content-product">
                     <div class="img-product">
-                        <?php if ($product->image != NULL) :?>
-                            <img src="/img/Catalog/<?php echo $product->modeltype;?>/<?php echo $product->images;?>" alt="kyosho-lazer-zx5">
-                        <?php endif; ?>
+                        <img src="/img/Catalog/<?php echo $product->modeltype;?>/<?php echo $product->images;?>" alt="kyosho-lazer-zx5">
                     </div>
                     <div class="short-description">
                         <h3 class="product-title"><?php echo $product->name; ?></h3>

@@ -1,7 +1,9 @@
 <?php
 $page = $_GET['page'];
 require "db.php";
-$user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
+}
 
 $db_products = R::findAll('models');
 $products = array();
@@ -185,7 +187,7 @@ $page_count = floor(count($products) / $counter);
                         <?php for ($i = $page * $counter; $i < ($page + 1) * $counter; $i++) : ?>
                             <div class="card">
                                 <?php if ($products[$i]->id != NULL) : ?>
-                                    <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->modeltype; ?>/<?php echo $products[$i]->image; ?>" alt="icon-catalog">
+                                    <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->modeltype; ?>/<?php echo $products[$i]->images; ?>" alt="icon-catalog">
                                     <a class="sale_btn" href="#"><?php echo $products[$i]->price; ?></a>
                                     <h3 class="card_text">
                                         <a class="cart_text-link" href="/product.php?id=<?php echo $products[$i]->modelid; ?>"><?php echo $products[$i]->name; ?></a>

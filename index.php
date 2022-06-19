@@ -333,10 +333,10 @@ foreach ($db_products as $row) {
                 <div class="footer_top">
                     <nav class="nav footer_nav">
                         <ul class="footer_menu">
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="/about-company.html">О компани</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Каталог</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Доставка</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Контакты</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/index.php">Главная</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/catalog.php">Каталог</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/about-company.php">О компани</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/contacts.php">Контакты</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -1,7 +1,7 @@
 <?php
 require 'db.php';
 if (isset($_SESSION['user'])) {
-    $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+    $user = $_SESSION['user'];
 }
 $db_products = R::findAll('models');
 $products = array();

@@ -1,6 +1,7 @@
 <?php
 $page = $_GET['page'];
 require "db.php";
+$user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
 
 $db_products = R::findAll('models');
 $products = array();

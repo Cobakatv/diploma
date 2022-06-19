@@ -2,6 +2,8 @@
 $modelid = $_GET['id'];
 require 'db.php';
 
+$user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+
 $product = R::findOne('Models', 'modelid = ?', [$modelid]);
 
 ?>

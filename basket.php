@@ -1,11 +1,11 @@
 <?php
-    require 'db.php';
-
-    $db_products = R::findAll('Models');
-    $products = array();
-    foreach ($db_products as $row) {
-        $products[] = $row;
-    }
+require 'db.php';
+$user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+$db_products = R::findAll('Models');
+$products = array();
+foreach ($db_products as $row) {
+    $products[] = $row;
+}
 
 ?>
 

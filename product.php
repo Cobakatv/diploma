@@ -112,7 +112,7 @@ $product = R::findOne('models', 'modelid = ?', [$modelid]);
                 <div class="catalog">
                     <button class="dropdown-btn">Автомодели</button>
                     <div class="dropdown-container">
-                        <a href="#"><?php echo $product->image;?></a>
+                        <a href="#">Ссылка 1</a>
                         <a href="#">Ссылка 2</a>
                         <a href="#">Ссылка 3</a>
                     </div>
@@ -181,7 +181,7 @@ $product = R::findOne('models', 'modelid = ?', [$modelid]);
                 <div class="content-product">
                     <div class="img-product">
                         <?php if ($product->image != NULL) :?>
-                            <img src="/img/Catalog/<?php echo $product->modeltype;?>/<?php echo $product->image;?>" alt="kyosho-lazer-zx5">
+                            <img src="/img/Catalog/<?php echo $product->modeltype;?>/<?php echo $product->images;?>" alt="kyosho-lazer-zx5">
                         <?php endif; ?>
                     </div>
                     <div class="short-description">

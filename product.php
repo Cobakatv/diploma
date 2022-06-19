@@ -2,11 +2,9 @@
 $modelid = $_GET['id'];
 require 'db.php';
 if (isset($_SESSION['user'])) {
-    $user = R::findOne('users', 'id = ?', array($_SESSION['user']->id));
+    $user = $_SESSION['user'];
 }
-
-
-$product = R::findOne('Models', 'modelid = ?', [$modelid]);
+$product = R::findOne('models', 'modelid = ?', [$modelid]);
 
 ?>
 

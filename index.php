@@ -67,9 +67,9 @@ foreach ($db_products as $row) {
             <div class="container">
                 <nav class="nav">
                     <ul class="menu">
-                        <li class="menu_liner"><a class="menu_link" href="/about-company.php">О компани</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/index.php">Главная</a></li>
                         <li class="menu_liner"><a class="menu_link" href="/catalog.php">Каталог</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/about-company.php">О компани</a></li>
                         <li class="menu_liner"><a class="menu_link" href="/contacts.php">Контакты</a></li>
                         <?php if ($user->email == "elwau.pp.ua@gmail.com") : ?>
                             <li class="menu_liner"><a class="menu_link" href="/addproduct.php">Добавить товар</a></li>

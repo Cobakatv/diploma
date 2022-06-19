@@ -120,13 +120,13 @@ $page_count = floor(count($products) / $counter);
                         <input class="input_search" type="text" placeholder="поиск по каталогу">
                     </div>
                     <div class="category">
-                        <div class="category-model">
+                       <!-- <div class="category-model">
                             <h3 class="model-title">Автомодели</h3>
                             <div class="container-checkbox">
                                 <input class="checkbox-input" type="checkbox" id="checkbox1">
                                 <label class="checkbox-label" for="checkbox1">Himoto</label>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="category-manufacturer">
                             <h3 class="manufacturer-title">Производители</h3>
                             <div class="container-checkbox">

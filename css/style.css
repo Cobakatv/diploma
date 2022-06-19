@@ -43,6 +43,7 @@ input{
     transition: 0.5s;
   }
   .menu_link:hover{
+    text-decoration: underline;
     color: #f44500;
   }
   
@@ -200,7 +201,7 @@ input{
   width: 300px;
 }
 .popup-form input {
-  width: 300px;
+  width: 100%;
   font-size: 14px;
   color: #000000;
   border: 2px solid #E27D55;
@@ -608,6 +609,9 @@ margin-bottom: 18px;
 .menu_footer-link{
   font-size: 14px;
   color: #747474;
+}
+.footer-menu_link{
+  color: #000000;
 }
 .footer_info{
   display: flex;

@@ -196,8 +196,11 @@ input{
   align-items: center;
   justify-content: center;
 }
+.forma-popup{
+  width: 300px;
+}
 .popup-form input {
-  width: 100%;
+  width: 300px;
   font-size: 14px;
   color: #000000;
   border: 2px solid #E27D55;
@@ -205,6 +208,7 @@ input{
   padding: 4px 10px;
 }
 .popup-textarea{
+  width: 300px;
   font-size: 14px;
   color: #000000;
   border: 2px solid #E27D55;

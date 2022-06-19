@@ -1,0 +1,59 @@
+
+.input-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form a{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+.input-input input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 30px;
+    border: 3px solid #E27D55;
+    margin-bottom: 20px;
+}
+.addproduct-textarea{
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #E27D55;
+    margin-bottom: 20px;
+}
+.input-file{
+    height: 0;
+    padding: 5px 0;
+}
+
+
+  
+
+
+
+
+
+
+
+
+.addproduct-btn{
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px 0;
+    background: #E27D55;
+    border-radius: 5px;
+    color: #fff;
+    transition: 0.5s;
+    margin-bottom: 30px;
+
+}
+.addproduct-btn:hover{
+    background: #ff4901;
+}

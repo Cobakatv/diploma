@@ -43,7 +43,7 @@ foreach ($db_products as $row) {
                         <h2>Написать нам</h2>
                     </div>
                     <div class="popup-form">
-                        <form action="#" id="poputs">
+                        <form class="forma-popup" action="#" id="poputs">
                             <p>
                                 <input type="text" class="form_input" id="name" name="firstName" pattern="^[А-ЯЁ][а-яё]*$" title="Введите правильный имя в указоному формате: Только русские буквы" placeholder="Имя" required>
                             </p>
@@ -51,7 +51,7 @@ foreach ($db_products as $row) {
                                 <input type="mail" class="form_input" id="email" name="email" pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" title="введите правильный email в указоному формате: elwau@gmail.com" placeholder="email" required>
                             </p>
                             <p>
-                                <textarea class="popup-textarea" name="comment" cols="30" rows="4" placeholder="Сообщение" required></textarea>
+                                <textarea class="popup-textarea" name="comment" cols="30" rows="4" placeholder="Написать сообщение" required></textarea>
                             </p>
                             <p>
                                 <button type="submit" class="popup-btn" name="popup-btn" id="popup-btn">Отправить</button>

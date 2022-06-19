@@ -1,6 +1,6 @@
 <?php
 require "libs/rb.php";
-header("Location: 404");
+
 
 R::setup('mysql:host=localhost;dbname=elwau', 'root', 'root');
 

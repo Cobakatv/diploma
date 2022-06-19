@@ -112,7 +112,7 @@ $product = R::findOne('models', 'modelid = ?', [$modelid]);
                 <div class="catalog">
                     <button class="dropdown-btn">Автомодели</button>
                     <div class="dropdown-container">
-                        <a href="#">Ссылка 1</a>
+                        <a href="#"><?php echo $product->image;?></a>
                         <a href="#">Ссылка 2</a>
                         <a href="#">Ссылка 3</a>
                     </div>

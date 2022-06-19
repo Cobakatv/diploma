@@ -22,14 +22,41 @@
 
 <body>
     <header class="header">
+        <div id="popup" class="popup">
+            <div class="popup-body">
+                <div class="popup-content">
+                    <a href="#" class="popup-close">X</a>
+                    <div class="popup-title">
+                        <h2>Написать нам</h2>
+                    </div>
+                    <div class="popup-form">
+                        <form class="forma-popup" action="#" id="poputs">
+                            <p>
+                                <input type="text" class="form_input" id="name" name="firstName" pattern="^[А-ЯЁ][а-яё]*$" title="Введите правильный имя в указоному формате: Только русские буквы" placeholder="Имя" required>
+                            </p>
+                            <p>
+                                <input type="mail" class="form_input" id="email" name="email" pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" title="введите правильный email в указоному формате: elwau@gmail.com" placeholder="email" required>
+                            </p>
+                            <p>
+                                <textarea class="popup-textarea" name="comment" cols="30" rows="4" placeholder="Написать сообщение" required></textarea>
+                            </p>
+                            <p>
+                                <button type="submit" class="popup-btn" name="popup-btn" id="popup-btn">Отправить</button>
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div class="header-top">
             <div class="container">
                 <nav class="nav">
                     <ul class="menu">
-                        <li class="menu_liner"><a class="menu_link" href="/index.html">Главная</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Каталог</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Контакты</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/index.php">Главная</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/catalog.php">Каталог</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/about-company.php">О компани</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/contacts.php">Контакты</a></li>
                     </ul>
                     <div class="input">
                         <input class="input_text" type="text" placeholder="поиск по каталогу">
@@ -47,7 +74,7 @@
                             <a class="tell-right" href="tel:380971256912">(380) <span class="tell-color">97-125-69-12</span></a>
                         </div>
                         <div class="header-contact_mail">
-                            <a class="header-mail" href="#">Написать сообщение</a>
+                            <a class="header-mail" href="#popup">Написать сообщение</a>
                         </div>
                     </div>
                     <div class="header-contact_right">
@@ -127,7 +154,7 @@
                     </div>
                 </div>
                 <div class="sidebar_mail">
-                    <a href="#" class="mail-siderbar sidebar_mail-email">Написать нам</a>
+                    <a href="#popup" class="mail-siderbar sidebar_mail-email">Написать нам</a>
                 </div>
             </div>
             <div class="content">
@@ -152,10 +179,10 @@
                 <div class="footer_top">
                     <nav class="nav footer_nav">
                         <ul class="footer_menu">
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="/index.html">Главная</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Каталог</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Доставка</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Контакты</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/index.php">Главная</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/catalog.php">Каталог</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/about-company.php">О компани</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/contacts.php">Контакты</a></li>
                         </ul>
                     </nav>
                 </div>

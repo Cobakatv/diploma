@@ -39,14 +39,41 @@ $page_count = floor(count($products) / $counter);
 
 <body>
     <header class="header">
+        <div id="popup" class="popup">
+            <div class="popup-body">
+                <div class="popup-content">
+                    <a href="#" class="popup-close">X</a>
+                    <div class="popup-title">
+                        <h2>Написать нам</h2>
+                    </div>
+                    <div class="popup-form">
+                        <form class="forma-popup" action="#" id="poputs">
+                            <p>
+                                <input type="text" class="form_input" id="name" name="firstName" pattern="^[А-ЯЁ][а-яё]*$" title="Введите правильный имя в указоному формате: Только русские буквы" placeholder="Имя" required>
+                            </p>
+                            <p>
+                                <input type="mail" class="form_input" id="email" name="email" pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" title="введите правильный email в указоному формате: elwau@gmail.com" placeholder="email" required>
+                            </p>
+                            <p>
+                                <textarea class="popup-textarea" name="comment" cols="30" rows="4" placeholder="Написать сообщение" required></textarea>
+                            </p>
+                            <p>
+                                <button type="submit" class="popup-btn" name="popup-btn" id="popup-btn">Отправить</button>
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div class="header-top">
             <div class="container">
                 <nav class="nav">
                     <ul class="menu">
-                        <li class="menu_liner"><a class="menu_link" href="/about-company.html">О компани</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Каталог</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Доставка</a></li>
-                        <li class="menu_liner"><a class="menu_link" href="#">Контакты</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/index.php">Главная</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/catalog.php">Каталог</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/about-company.php">О компани</a></li>
+                        <li class="menu_liner"><a class="menu_link" href="/contacts.php">Контакты</a></li>
                     </ul>
                     <div class="input">
                         <input class="input_text" type="text" placeholder="поиск по каталогу">
@@ -64,7 +91,7 @@ $page_count = floor(count($products) / $counter);
                             <a class="tell-right" href="tel:380971256912">(380) <span class="tell-color">97-125-69-12</span></a>
                         </div>
                         <div class="header-contact_mail">
-                            <a class="header-mail" href="#">Написать сообщение</a>
+                            <a class="header-mail" href="#popup">Написать сообщение</a>
                         </div>
                     </div>
                     <div class="header-contact_right">
@@ -72,10 +99,10 @@ $page_count = floor(count($products) / $counter);
                             <a class="header-shop" href="#">В вашей корзине пусто</a>
                         </div>
                         <div class="header-contact-ak">
-                        <?php if($user) : ?>
-                                <a class="header-ak" href="#">Здравствуйте, <?php echo $user->firstName;?></a>
-                                <a class="header-ak" href="/logout.php" >Выйти</a>
-                            <?php else :?>
+                            <?php if ($user) : ?>
+                                <a class="header-ak" href="#">Здравствуйте, <?php echo $user->firstName; ?></a>
+                                <a class="header-ak" href="/logout.php">Выйти</a>
+                            <?php else : ?>
                                 <a class="header-ak" href="signup.php">Войти в личный кабинет</a>
                             <?php endif; ?>
                         </div>
@@ -106,7 +133,7 @@ $page_count = floor(count($products) / $counter);
                                 <label class="checkbox-label" for="checkbox2">Himoto</label>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="filters-price__price">
                         <h3 class="filters-price_title">Цена</h3>
@@ -156,7 +183,7 @@ $page_count = floor(count($products) / $counter);
                 <div class="sale sale-container">
 
                     <div class="sale_card">
-                        <?php for ($i = $page*$counter; $i < ($page+1)*$counter; $i++) : ?>
+                        <?php for ($i = $page * $counter; $i < ($page + 1) * $counter; $i++) : ?>
                             <div class="card">
                                 <?php if ($products[$i]->id != NULL) : ?>
                                     <img class="sale-img" src="/img/Catalog/<?php echo $products[$i]->modeltype; ?>/<?php echo $products[$i]->image; ?>" alt="icon-catalog">
@@ -168,11 +195,11 @@ $page_count = floor(count($products) / $counter);
                             </div>
                         <?php endfor; ?>
                     </div>
-                        <div class="page_list">
-                            <?php for ($p = 0; $p <= $page_count; $p++) :?>
-                                <a href="/catalog.php?page=<?php echo $p ?>"><button class="page-button"><?php echo $p + 1; ?></button></a>
-                            <?php endfor;?>
-                        </div>
+                    <div class="page_list">
+                        <?php for ($p = 0; $p <= $page_count; $p++) : ?>
+                            <a href="/catalog.php?page=<?php echo $p ?>"><button class="page-button"><?php echo $p + 1; ?></button></a>
+                        <?php endfor; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -183,10 +210,10 @@ $page_count = floor(count($products) / $counter);
                 <div class="footer_top">
                     <nav class="nav footer_nav">
                         <ul class="footer_menu">
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="/about-company.html">О компани</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Каталог</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Доставка</a></li>
-                            <li class="menu_liner footer_liner"><a class="menu_link menu_footer-link" href="#">Контакты</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/index.php">Главная</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/catalog.php">Каталог</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/about-company.php">О компани</a></li>
+                            <li class="menu_liner"><a class="menu_link footer-menu_link" href="/contacts.php">Контакты</a></li>
                         </ul>
                     </nav>
                 </div>
